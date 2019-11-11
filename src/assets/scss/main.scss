@@ -11,15 +11,15 @@ html {
   color: $mainFontColor;
   height: 100%;
 
-  @media screen and (max-width: $desktopWidth) {
+  @media (max-width: $desktopWidth) {
     font-size: 16px;
   }
 
-  @media screen and (max-width: $tableWidth) {
+  @media (max-width: $tableWidth) {
     font-size: 15px;
   }
 
-  @media screen and (max-width: $phoneWidth) {
+  @media (max-width: $phoneWidth) {
     font-size: 14px;
   }
 }
@@ -28,7 +28,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: $mainFont;
-  font-size: $mainFontSize;
   font-weight: $mainFontWeight;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -96,50 +95,24 @@ section,
   flex: 0 0 auto;
   position: relative;
   margin: 0 auto;
+  padding: 0 15px;
   max-width: $desktopWidth;
 
-  @media screen and (max-width: $smDesktopWidth) {
-    max-width: tableWidth;
+  @media (max-width: $smDesktopWidth) {
+    max-width: $tableWidth;
   }
 
-  @media screen and (max-width: $tableWidth) {
-    max-width: phoneWidth;
+  @media (max-width: $tableWidth) {
+    max-width: $phoneWidth;
   }
 
-  @media screen and (max-width: $phoneWidth) {
-    max-width: smPhoneWidth;
-  }
-}
-
-@svg-load nav url(../../assets/img/svg/cpu.svg) {
-  fill: #000;
-
-  path:nth-child(2) {
-    fill: red;
+  @media (max-width: $phoneWidth) {
+    max-width: $smPhoneWidth;
   }
 }
 
-@svg-load nav2 url(../../assets/img/svg/cpu.svg) {
-  fill: red;
-
-  path:nth-child(2) {
-    fill: #000;
-  }
-}
-
-.test {
-  background: svg-load('../../assets/img/svg/cpu.svg', fill=#000);
-  //background: svg-inline(nav);
-  background-size: contain;
-  width: 80px;
-  height: 80px;
-  display: block;
-
-  &:hover {
-    background: svg-load('../../assets/img/svg/cpu.svg', fill=red);
-    background-size: contain;
-  }
-}
 
 // Modules
-// @import "modules/my-module.scss";
+@import "modules/header";
+@import "modules/nav";
+@import "modules/footer";

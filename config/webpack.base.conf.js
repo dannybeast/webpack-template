@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const {
@@ -92,7 +91,18 @@ module.exports = {
         options: {
           name: '[name].[ext]'
         }
-      }, {
+      }, 
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        options: {
+          extract: true,
+          spriteFilename: 'sprite.svg',
+          runtimeCompat: true
+        }
+      },
+
+      {
         test: /\.scss$/,
         use: [
           'style-loader',
@@ -148,7 +158,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin(),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       // [hash]
@@ -174,7 +183,6 @@ module.exports = {
       pngquant: ({quality: 50}),
       plugins: [imageminMozjpeg({quality: 50})]
     }),
-
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     ...PAGES.map(page => new HtmlWebpackPlugin({

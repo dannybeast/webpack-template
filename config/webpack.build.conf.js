@@ -1,7 +1,7 @@
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const buildWebpackConfig = merge(baseWebpackConfig, {
   // BUILD config
   mode: 'production',
@@ -11,7 +11,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
     ]
   },
   plugins: [
-    
+    new BundleAnalyzerPlugin()
   ]
 })
 

@@ -6,22 +6,32 @@ block variables
   - var pageClass = 'index-page';
 
 block content
-  p.popa
-  section
-    .container
-      +item('item title', 'item descr')
-      +item('item title', 'item descr')
-      +item('item title', 'item descr')
+  
+  .container
+    .typography
+      h1 Title 1
+      p <a href="#">Lorem ipsum</a>, <i>dolor</i> sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!
+      p <strong>Lorem ipsum dolor</strong>, sit amet consectetur adipisicing elit. Mollitia recusandae, in necessitatibus quod laboriosam voluptatem ullam magnam porro ad cumque adipisci dolorum a animi facere quisquam odio doloremque dolores voluptatibus.
+      h2 Title 2
+      ul
+        li List item
+        li List item
+        li List item
+      p
+        big Sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!
+      p
+        small Sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!
+      h3 Title 3
+      ol
+        li List item
+        li List item
+        li List item
+      h4 Title 4
+      h5 Title 5
+      h6 Title 6
   example-component
-  p.popa
-  p.popa
+
 
 block script
   script(src="assets/js/vendors.js")
   script(src="assets/js/app.js")
-  script(type='text/javascript').
-    const foo = true;
-    let bar = function() {};
-    if (foo) {
-    bar(1 + 5)
-    }

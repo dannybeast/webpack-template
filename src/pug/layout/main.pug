@@ -1,4 +1,7 @@
+include ../bemto-master/bemto.pug
+
 include ../utils/mixins
+
 block variables
 
 doctype html
@@ -11,6 +14,8 @@ html(lang='en')
     block head
 
   body(class=pageClass)
+    +b.h
+      +e.P.her pp
     .wrapper
       #app
         include ../includes/modules/header

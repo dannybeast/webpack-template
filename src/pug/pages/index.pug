@@ -1,0 +1,27 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Webpack + Pug';
+  - var description = 'Description for Webpack + Pug';
+  - var pageClass = 'index-page';
+
+block content
+  p.popa
+  section
+    .container
+      +item('item title', 'item descr')
+      +item('item title', 'item descr')
+      +item('item title', 'item descr')
+  example-component
+  p.popa
+  p.popa
+
+block script
+  script(src="assets/js/vendors.js")
+  script(src="assets/js/app.js")
+  script(type='text/javascript').
+    const foo = true;
+    let bar = function() {};
+    if (foo) {
+    bar(1 + 5)
+    }

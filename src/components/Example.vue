@@ -1,7 +1,7 @@
 <template lang="pug">
   section
     .container
-      img(src="assets/img/logo.png" :alt="message")
+      img(src="assets/images/logo.png" :alt="message")
       p {{ message }}
 </template>
 

@@ -3,7 +3,6 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
-@import "modules/typography";
 
 html {
   line-height: $mainLineHeight;
@@ -113,6 +112,7 @@ section,
 
 
 // Modules
+@import "modules/typography";
 @import "modules/header";
 @import "modules/nav";
 @import "modules/footer";

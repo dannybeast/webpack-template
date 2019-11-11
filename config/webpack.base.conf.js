@@ -3,6 +3,8 @@ const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 const {
   VueLoaderPlugin
 } = require('vue-loader')
@@ -57,7 +59,10 @@ module.exports = {
           },
           // this applies to pug imports inside JavaScript
           {
-            use: ['pug-loader']
+            use: [{
+              loader: 'pug-loader',
+              options: { pretty: true },
+            }]
           }
         ]
       }, {
@@ -140,6 +145,7 @@ module.exports = {
     }
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       // [hash]
@@ -148,6 +154,9 @@ module.exports = {
     new CopyWebpackPlugin([{
         from: `${PATHS.src}/${PATHS.assets}img`,
         to: `${PATHS.assets}img`
+      },{
+        from: `${PATHS.src}/${PATHS.assets}icons`,
+        to: `${PATHS.assets}icons`
       },
       {
         from: `${PATHS.src}/${PATHS.assets}fonts`,
@@ -166,6 +175,7 @@ module.exports = {
       inject: false,
       hash: false,
       minify: false
-    }))
+    })),
+
   ],
 }

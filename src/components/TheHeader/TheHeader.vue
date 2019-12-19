@@ -48,6 +48,8 @@ export default {
             height: 50px;
             display: block;
             background: svg-inline(logo);
+            background-repeat:no-repeat;
+            background-position:center;
             background-size: contain;
             margin-right: 30px;
         }

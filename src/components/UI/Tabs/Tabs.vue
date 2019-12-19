@@ -41,6 +41,7 @@ export default {
     .tabs{
         &__nav{
             display: flex;
+            overflow:auto;
             a{
                 color: $neutral-primary;
                 text-decoration: none;
@@ -48,6 +49,7 @@ export default {
                 border-top: solid $border-width $border-color;
                 border-left: solid $border-width $border-color;
                 display: block;
+                white-space: nowrap;
             }
             li{
                 &:last-child{

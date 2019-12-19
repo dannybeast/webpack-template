@@ -40,6 +40,9 @@ export default {
         border-radius: $radius;
         font-size: $mainFontSize;
         cursor: pointer;
+        display: inline-flex;
+        vertical-align: top;
+        text-decoration: none;
 
         &[disabled]{
             cursor: not-allowed;

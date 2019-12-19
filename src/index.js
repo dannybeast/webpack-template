@@ -18,6 +18,6 @@ Vue.component('ui-button', require('./components/UI/Button/Button.vue').default)
 const app = new Vue({
   el: '#app',
   data: {
-    test: 'Test'
+    test: 'UI'
   }
 });

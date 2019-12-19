@@ -35,11 +35,17 @@ block content
             h6 Title 6
 
         tab(name="Buttons")
-          ui-button(tag="a" href="hello.html") Link default
-          ui-button(tag="button" type="primary" disabled="true") Button primary disabled
-          ui-button(tag="a" href="hello.html" type="danger") Link danger
-          ui-button(tag="a" href="hello.html" type="success") Link success icon-left
-          ui-button(tag="a" href="hello.html" type="primary") Link success icon-right
+          .items
+            .item
+              ui-button(tag="a" href="hello.html") Link default
+            .item
+              ui-button(tag="button" type="primary" disabled="true") Button primary disabled
+            .item
+              ui-button(tag="a" href="hello.html" type="danger") Link danger
+            .item
+              ui-button(tag="a" href="hello.html" type="success") Link success icon-left
+            .item
+              ui-button(tag="a" href="hello.html" type="primary") Link success icon-right
 
         tab(name="Tab 3")
           p Tab 3

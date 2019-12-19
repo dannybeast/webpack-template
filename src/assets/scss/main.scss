@@ -3,6 +3,7 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
+@import "utils/smart-grid";
 
 html {
   line-height: $mainLineHeight;
@@ -87,6 +88,22 @@ section,
 
   @media (max-width: $phoneWidth) {
     max-width: $smPhoneWidth;
+  }
+}
+
+
+.items {
+  @include row-flex();
+  @include md(justify-content, center);
+  margin-bottom: -30px;
+
+  .item {
+    @include col();
+    @include size(3);
+    @include size-lg(5);
+    @include size-md(6);
+    @include size-sm(12);
+    margin-bottom: 30px;
   }
 }
 

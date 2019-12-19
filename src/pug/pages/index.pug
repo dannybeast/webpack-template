@@ -9,7 +9,8 @@ block content
   +b.SECTION.section
     .container
       // Tabs
-      tabs
+      ui-tabs
+      
         tab(name="Typography" :selected="true")
           .typography
             h1 Title 1
@@ -32,8 +33,14 @@ block content
             h4 Title 4
             h5 Title 5
             h6 Title 6
-        tab(name="Tab 2")
-          p Tab 2
+
+        tab(name="Buttons")
+          ui-button(tag="a" href="hello.html") Link default
+          ui-button(tag="button" type="primary" disabled="true") Button primary disabled
+          ui-button(tag="a" href="hello.html" type="danger") Link danger
+          ui-button(tag="a" href="hello.html" type="success") Link success icon-left
+          ui-button(tag="a" href="hello.html" type="primary") Link success icon-right
+
         tab(name="Tab 3")
           p Tab 3
 

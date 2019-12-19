@@ -29,7 +29,7 @@
         <section class="section">
           <div class="container">
             <!-- Tabs-->
-            <tabs>
+            <ui-tabs>
               <tab name="Typography" :selected="true">
                 <div class="typography">
                   <h1>Title 1</h1>
@@ -56,13 +56,17 @@
                   <h6>Title 6</h6>
                 </div>
               </tab>
-              <tab name="Tab 2">
-                <p>Tab 2</p>
+              <tab name="Buttons">
+                <ui-button tag="a" href="hello.html">Link default</ui-button>
+                <ui-button tag="button" type="primary" disabled="true">Button primary disabled</ui-button>
+                <ui-button tag="a" href="hello.html" type="danger">Link danger</ui-button>
+                <ui-button tag="a" href="hello.html" type="success">Link success icon-left</ui-button>
+                <ui-button tag="a" href="hello.html" type="primary">Link success icon-right</ui-button>
               </tab>
               <tab name="Tab 3">
                 <p>Tab 3</p>
               </tab>
-            </tabs>
+            </ui-tabs>
           </div>
         </section>
       </div>

@@ -1,4 +1,7 @@
-+b.HEADER.header
-  .container
-    +e.A(href="/" class="logo")
-    include nav
+the-header
+  template(slot-scope="props")
+    +b.HEADER.header(v-on:click="props.onCl()")
+      .container
+        a(href="/" class="header__logo")
+        h1.header__slogan {{test}} {{props.slogan}} 
+        include nav

@@ -29,6 +29,7 @@ $heading-font-weight: $mainFontWeight;
 a {
   color: $link-color;
   text-decoration: underline;
+
   &:visited {
     color: $link-visited-color;
   }
@@ -66,6 +67,26 @@ strong,
 b {
   font-weight: 700;
   @extend .loud;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .h1,
@@ -149,6 +170,7 @@ b {
   padding-left: 0;
   margin-bottom: 2em;
   counter-reset: myCounter;
+
   li {
     position: relative;
     list-style: none;
@@ -223,6 +245,7 @@ b {
   &--center {
     text-align: center;
   }
+
   small {
     font-size: 0.8em;
   }
@@ -230,13 +253,14 @@ b {
   big {
     font-size: 1.2em;
   }
-  & > * {
+
+  &>* {
     &:first-child {
       margin-top: 0;
     }
   }
 
-  & > * {
+  &>* {
     &:last-child {
       margin-bottom: 0;
     }

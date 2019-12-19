@@ -4,8 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
-const imageminMozjpeg = require('imagemin-mozjpeg');
+// const ImageminPlugin = require('imagemin-webpack-plugin').default
+// const imageminMozjpeg = require('imagemin-mozjpeg');
 const {
   VueLoaderPlugin
 } = require('vue-loader')
@@ -179,10 +179,10 @@ module.exports = {
         to: ''
       },
     ]),
-    new ImageminPlugin({
-      pngquant: ({quality: 50}),
-      plugins: [imageminMozjpeg({quality: 50})]
-    }),
+    // new ImageminPlugin({
+    //   pngquant: ({quality: 50}),
+    //   plugins: [imageminMozjpeg({quality: 50})]
+    // }),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     ...PAGES.map(page => new HtmlWebpackPlugin({

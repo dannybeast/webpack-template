@@ -15,11 +15,10 @@ html(lang='ru')
     block head
 
   body(class=pageClass)
-    .wrapper
-      #app
-        include ../includes/modules/header
-        .content-wrapper
-          block content
-        include ../includes/modules/footer
+    #app.wrapper
+      include ../includes/modules/header
+      .content
+        block content
+      include ../includes/modules/footer
 
     block script

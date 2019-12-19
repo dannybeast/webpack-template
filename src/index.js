@@ -8,12 +8,16 @@ import './assets/scss/main.scss'
 // import './assets/css/main.css'
 
 // Vue.js
-window.Vue = require('vue')
+window.Vue = require('vue');
 console.log('qq');
 // Vue components (for use in html)
-Vue.component('example-component', require('./components/Example.vue').default)
+Vue.component('the-header', require('./components/TheHeader/TheHeader.vue').default);
+Vue.component('tabs', require('./components/UI/Tabs/Tabs.vue').default);
 
 // Vue init
 const app = new Vue({
-  el: '#app'
-})
+  el: '#app',
+  data: {
+    test: 'Test'
+  }
+});

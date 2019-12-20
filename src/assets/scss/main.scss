@@ -1,9 +1,9 @@
 @import "utils/libs";
 @import "utils/vars";
+@import "utils/smart-grid";
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
-@import "utils/smart-grid";
 
 html {
   line-height: $mainLineHeight;
@@ -11,17 +11,9 @@ html {
   color: $mainFontColor;
   height: 100%;
 
-  @media (max-width: $desktopWidth) {
-    font-size: 16px;
-  }
-
-  @media (max-width: $tableWidth) {
-    font-size: 15px;
-  }
-
-  @media (max-width: $phoneWidth) {
-    font-size: 14px;
-  }
+  @include md(font-size, 16px);
+  @include sm(font-size, 15px);
+  @include xs(font-size, 14px);
 }
 
 body {
@@ -42,19 +34,7 @@ body {
 section,
 .section {
   position: relative;
-  padding: 40px 0;
-
-  @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
-  }
-
-  @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
-  }
-
-  @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
-  }
+  @include paddingY(60px, 60px);
 }
 
 .wrapper {
@@ -71,24 +51,9 @@ section,
 }
 
 .container {
-  width: 100%;
-  flex: 0 0 auto;
   position: relative;
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: $desktopWidth;
-
-  @media (max-width: $smDesktopWidth) {
-    max-width: $tableWidth;
-  }
-
-  @media (max-width: $tableWidth) {
-    max-width: $phoneWidth;
-  }
-
-  @media (max-width: $phoneWidth) {
-    max-width: $smPhoneWidth;
-  }
+  //@include wrapper-full();
+  @include wrapper();
 }
 
 
@@ -99,7 +64,7 @@ section,
 
   .item {
     @include col();
-    @include size(3);
+    @include size(6);
     @include size-lg(5);
     @include size-md(6);
     @include size-sm(12);

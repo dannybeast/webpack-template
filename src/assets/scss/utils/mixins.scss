@@ -23,3 +23,17 @@
   width: $width;
   height: $height;
 }
+
+// Вертикальный ритм
+
+@mixin paddingY($valueTop, $valueBottom:$valueTop) {
+  @if $valueTop !=0 {
+    padding-top: $valueTop;
+    @include sm(padding-top, $valueTop/2);
+  }
+
+  @if $valueBottom !=0 {
+    padding-bottom: $valueBottom;
+    @include sm(padding-bottom, $valueBottom/2);
+  }
+}

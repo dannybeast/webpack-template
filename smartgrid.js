@@ -1,6 +1,5 @@
 var smartgrid = require('smart-grid');
 
-/* It's principal settings in smart grid project */
 var settings = {
     outputStyle: 'scss',
     /* less || scss || sass || styl */

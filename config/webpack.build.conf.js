@@ -26,11 +26,13 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
         threshold: 10240,
         minRatio: 0.8
       })
-  
+
     ]
   },
   plugins: [
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static'
+    })
   ]
 })
 

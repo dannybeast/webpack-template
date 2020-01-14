@@ -64,8 +64,8 @@ section,
 
   .item {
     @include col();
-    @include size(6);
-    @include size-lg(5);
+    @include size(3);
+    @include size-lg(4);
     @include size-md(6);
     @include size-sm(12);
     margin-bottom: 30px;
@@ -79,4 +79,5 @@ section,
 @import "modules/nav";
 @import "modules/buttons";
 @import "modules/fields";
+@import "modules/checkbox-and-radio";
 @import "modules/footer";

@@ -1,4 +1,5 @@
-@import "_spacing-helpers";
+@import "helpers-spacing";
+@import "helpers-classes";
 
 // px to rem
 @function rem($pixels, $context: $mainFontSize) {
@@ -19,11 +20,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-@mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
 }
 
 // Вертикальный ритм

@@ -11,7 +11,7 @@ block content
       // Tabs
       ui-tabs
       
-        tab(name="Typography" :selected="true")
+        tab(name="Typography")
           .typography
             h1 Title 1
             p <a href="#">Lorem ipsum</a>, <i>dolor</i> sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!
@@ -34,22 +34,112 @@ block content
             h5 Title 5
             h6 Title 6
 
-        tab(name="Buttons")
-          .items
-            .item
-              ui-button(tag="a" href="hello.html") Link default
-            .item
-              ui-button(tag="button" type="primary" disabled=true) Button primary disabled
-            .item
-              ui-button(tag="a" href="hello.html" type="danger") Link danger
-            .item
-              ui-button(tag="a" href="hello.html" type="success") Link success icon-left
-            .item
-              ui-button(tag="a" href="hello.html" type="primary") Link success icon-right
+        tab(name="Forms" :selected="true")
+          form
+            .form-fields
+              +b.field(class="--error")
+                label Text  
+                input(type='text')
+              +b.field
+                label Password
+                input(type='password')
+              +b.field
+                label Number
+                input(type='number' min="0")
+              +b.field
+                label Email
+                input(type='email' disabled)
+              +b.field
+                label Url
+                input(type='url')
+              +b.field
+                label Tel
+                input(type='tel')
+              +b.field
+                label Search
+                input(type='search')
+              +b.field
+                label Textarea
+                textarea
+              +b.field
+                label Date
+                input(type='date')
+              +b.field
+                label Datetime
+                input(type='datetime')
+              +b.field
+                label Datetime-local
+                input(type='datetime-local')
+              +b.field
+                label Month
+                input(type='month')
+              +b.field
+                label Week
+                input(type='week')
+              +b.field
+                label Time
+                input(type='time')
+              +b.field
+                label Select
+                select
+                  optgroup(label='optgroup')
+                    option option 1
+                    option option 2
+                    option option 3
+              +b.field
+                label Select (multiple attr)
+                select(multiple='')
+                  optgroup(label='optgroup')
+                    option option 1
+                    option option 2
+                    option option 3
+              +b.field
+                label Select (size attr)
+                select(size='4')
+                  optgroup(label='optgroup')
+                    option option 1
+                    option option 2
+                    option option 3
+              +b.field
+                label Datalist
+                input(list='datalist')
+                datalist#datalist
+                  option(value='option 1')
+                  option(value='option 2')
+                  option(value='option 3')
+              +b.field
+                label Radio
 
-        tab(name="Tab 3")
-          p Tab 3
+                +b.LABEL.radio
+                  input(type='radio')
+                  span Radio
 
+              +b.field
+                label Checkbox
+
+                +b.LABEL.checkbox 
+                  input(type='checkbox')
+                  span Checkbox
+
+              +b.field
+                label Range
+                input(type='range')
+              +b.field
+                label File
+                +b.LABEL.choose-file
+                  input(type='file')
+              +b.field
+                label Submit
+                input(type='submit' class="btn btn--primary")
+              +b.field
+                label Reset
+                input(type='reset' class="btn btn--danger")
+              +b.field
+                label Button (input tag)
+                input(type='button', value='Button' class="btn" disabled)
+              +b.field
+                label Button (button tag)
+                button.btn Button
 
 block script
   script(src="assets/js/vendors.js")

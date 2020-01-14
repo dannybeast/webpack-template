@@ -3,7 +3,7 @@ import './js/';
 
 // SCSS
 import './assets/scss/main.scss'
-
+import chooseFile from './components/chooseFile';
 // CSS (example)
 // import './assets/css/main.css'
 
@@ -14,12 +14,13 @@ window.Vue = require('vue');
 Vue.component('the-header', require('./components/TheHeader/TheHeader.vue').default);
 Vue.component('ui-tabs', require('./components/UI/Tabs/Tabs.vue').default);
 Vue.component('ui-hamburger', require('./components/UI/Hamburger/Hamburger.vue').default);
-Vue.component('ui-button', require('./components/UI/Button/Button.vue').default);
 // Vue init
 const app = new Vue({
   el: '#app',
   data: {
     test: 'UI'
   },
-  mounted() {},
+  mounted() {
+    chooseFile();
+  },
 });

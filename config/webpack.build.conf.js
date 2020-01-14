@@ -1,6 +1,6 @@
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const buildWebpackConfig = merge(baseWebpackConfig, {
@@ -8,16 +8,15 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        extractComments: false,
+      new TerserPlugin({
         parallel: true,
-        uglifyOptions: {
+        extractComments: false,
+        terserOptions: {
           mangle: true,
           output: {
             comments: false,
           }
-        }
+        },
       }),
       new CompressionPlugin({
         filename: '[path].gz[query]',

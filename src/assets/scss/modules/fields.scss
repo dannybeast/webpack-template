@@ -1,0 +1,190 @@
+// row
+.form-fields {
+    @include row-flex();
+    margin-bottom: -1em;
+}
+
+.form-fields>* {
+    @include col();
+    @include size(4);
+    @include size-md(6);
+    @include size-sm(12);
+    margin-bottom: 1em;
+}
+
+// FORM STYLES
+$margin: 5px;
+$border-width: 1px;
+$border-color: $border-base;
+$border-color-danger: $danger-color;
+$field-radius: 2px;
+$field-height: 45px;
+$field-bg: transparent;
+
+.field {
+    &--error {
+        color: $danger-color;
+
+        * {
+            border-color: $danger-color !important;
+        }
+    }
+}
+
+.choose-file {
+    font-weight: normal;
+
+    input {
+        display: none;
+    }
+
+}
+
+optgroup {
+    padding-top: 5px;
+
+    option {
+        padding: 5px 0;
+    }
+}
+
+// buttons, submit
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+    opacity: 0.5;
+}
+
+//
+
+input,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+label {
+    display: block;
+    line-height: 1.1;
+    margin: $margin 0;
+    font-size: $base-font-size/1.2;
+    font-weight: 700;
+    margin-bottom: $margin*2;
+}
+
+input[type="radio"]+label,
+input[type="checkbox"]+label {
+    margin: 0;
+    font-weight: 400;
+}
+
+
+input {
+    line-height: normal;
+}
+
+textarea {
+    line-height: 1.25em;
+}
+
+select {
+    border: 1px solid $border-color;
+    background-color: #fff;
+}
+
+input[type=checkbox],
+input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+    display: block;
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=date],
+input[type=month],
+input[type=time],
+input[type=datetime],
+input[type=datetime-local],
+input[type=week],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=color],
+input:not([type]),
+select,
+textarea {
+    border: $border-width solid $border-color;
+    border-radius: $field-radius;
+    background: $field-bg;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 10px;
+    height: $field-height;
+    margin-bottom: $margin;
+    transition: all $animSpeed $anim;
+
+    &:focus,
+    &:hover {
+        border-color: darken($border-color, 15%);
+    }
+}
+
+select[size],
+select[multiple] {
+    height: auto;
+}
+
+textarea {
+    height: $field-height*2;
+    padding-top: 10px;
+}
+
+input[type=color] {
+    padding: 0;
+}
+
+input[type=color] {
+    width: $field-height;
+    height: $field-height;
+}
+
+input[readonly],
+select[readonly],
+textarea[readonly] {
+    background-color: $border-light;
+    color: $neutral-primary;
+    border-color: $border-color;
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid {
+    color: $border-color-danger;
+    border-color: $border-color-danger;
+}

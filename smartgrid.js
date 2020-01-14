@@ -20,14 +20,14 @@ var settings = {
             /* -> @media (max-width: 1100px) */
         },
         md: {
-            width: '960px'
+            width: '992px'
         },
         sm: {
-            width: '780px',
+            width: '767px',
             fields: '15px' /* set fields only if you want to change container.fields */
         },
         xs: {
-            width: '560px'
+            width: '360px'
         }
         /* 
         We can create any quantity of break points.

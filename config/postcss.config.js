@@ -10,7 +10,7 @@ module.exports = {
     require('autoprefixer'),
     require('postcss-inline-svg'),
     require('postcss-svgo'),
-    require('cssnano'),
-    require('css-mqpacker')
+    //require('cssnano'),
+    //require('css-mqpacker')
   ]
 }

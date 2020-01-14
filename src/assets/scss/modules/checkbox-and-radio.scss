@@ -1,0 +1,77 @@
+$font-size: $base-font-size;
+$size: 25px;
+
+.checkbox,
+.radio {
+    display: inline-flex !important;
+    font-weight: normal;
+    align-items: center;
+    position: relative;
+    padding-left: $size + 10px;
+    cursor: pointer;
+    font-size: $font-size;
+    user-select: none;
+    min-height: $size;
+
+    input {
+        display: none;
+
+        &:checked+span {
+            &:before {
+                background-color: $primary-color;
+                border-color: $primary-color;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    span {
+        &:before {
+            content: '';
+            width: $size;
+            height: $size;
+            display: block;
+            border: $border-width solid $border-color;
+            border-radius: $field-radius;
+            background: $field-bg;
+            position: absolute;
+            left: 0;
+            top: 0px;
+        }
+
+        &:after {
+            content: "";
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGc+CiAgPHRpdGxlPmJhY2tncm91bmQ8L3RpdGxlPgogIDxyZWN0IGZpbGw9Im5vbmUiIGlkPSJjYW52YXNfYmFja2dyb3VuZCIgaGVpZ2h0PSI0MDIiIHdpZHRoPSI1ODIiIHk9Ii0xIiB4PSItMSIvPgogPC9nPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxwYXRoIGZpbGw9IiNmZmZmZmYiIGlkPSJzdmdfMSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJtMjEuNjUyLDMuMjExYy0wLjI5MywtMC4yOTUgLTAuNzcsLTAuMjk1IC0xLjA2MSwwbC0xMS4xODEsMTEuMTI5Yy0wLjI5MywwLjI5NyAtMC43NzEsMC4yOTcgLTEuMDYyLDBsLTQuODk5LC00Ljk4OWMtMC4xNDUsLTAuMTQ4IC0wLjMzNSwtMC4yMjEgLTAuNTI2LC0wLjIyMmMtMC4xOTMsLTAuMDAxIC0wLjM4OSwwLjA3MiAtMC41MzYsMC4yMjJsLTIuMTY1LDEuOTQ2Yy0wLjE0NCwwLjE0OCAtMC4yMjIsMC4zMzMgLTAuMjIyLDAuNTI2YzAsMC4xOTQgMC4wNzgsMC4zOTcgMC4yMjMsMC41NDRsNC45NCw1LjE4NGMwLjI5MiwwLjI5NiAwLjc3MSwwLjc3NiAxLjA2MiwxLjA3bDIuMTI0LDIuMTQxYzAuMjkyLDAuMjkzIDAuNzY5LDAuMjkzIDEuMDYyLDBsMTQuMzY2LC0xNC4zNGMwLjI5MywtMC4yOTQgMC4yOTMsLTAuNzc3IDAsLTEuMDcxbC0yLjEyNSwtMi4xNHoiIGNsaXAtcnVsZT0iZXZlbm9kZCIvPgogPC9nPgo8L3N2Zz4=');
+            background-repeat: no-repeat;
+            width: $size;
+            height: $size;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all $animSpeed $anim;
+        }
+    }
+}
+
+.radio {
+    span {
+        &:before {
+            border-radius: 50%;
+        }
+
+        &:after {
+            background: #fff;
+            border-radius: 50%;
+            width: $size - 8;
+            height: $size - 8;
+            top: 4px;
+            left: 4px;
+        }
+    }
+}

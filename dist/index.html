@@ -31,7 +31,7 @@
           <div class="container">
             <!-- Tabs-->
             <ui-tabs>
-              <tab name="Typography" :selected="true">
+              <tab name="Typography">
                 <div class="typography">
                   <h1>Title 1</h1>
                   <p><a href="#">Lorem ipsum</a>, <i>dolor</i> sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!</p>
@@ -57,27 +57,144 @@
                   <h6>Title 6</h6>
                 </div>
               </tab>
-              <tab name="Buttons">
-                <div class="items">
-                  <div class="item">
-                    <ui-button tag="a" href="hello.html">Link default</ui-button>
+              <tab name="Forms" :selected="true">
+                <form>
+                  <div class="form-fields">
+                    <div class="field field--error">
+                      <label>Text  </label>
+                      <input type="text">
+                    </div>
+                    <div class="field">
+                      <label>Password</label>
+                      <input type="password">
+                    </div>
+                    <div class="field">
+                      <label>Number</label>
+                      <input type="number" min="0">
+                    </div>
+                    <div class="field">
+                      <label>Email</label>
+                      <input type="email" disabled>
+                    </div>
+                    <div class="field">
+                      <label>Url</label>
+                      <input type="url">
+                    </div>
+                    <div class="field">
+                      <label>Tel</label>
+                      <input type="tel">
+                    </div>
+                    <div class="field">
+                      <label>Search</label>
+                      <input type="search">
+                    </div>
+                    <div class="field">
+                      <label>Textarea</label>
+                      <textarea></textarea>
+                    </div>
+                    <div class="field">
+                      <label>Date</label>
+                      <input type="date">
+                    </div>
+                    <div class="field">
+                      <label>Datetime</label>
+                      <input type="datetime">
+                    </div>
+                    <div class="field">
+                      <label>Datetime-local</label>
+                      <input type="datetime-local">
+                    </div>
+                    <div class="field">
+                      <label>Month</label>
+                      <input type="month">
+                    </div>
+                    <div class="field">
+                      <label>Week</label>
+                      <input type="week">
+                    </div>
+                    <div class="field">
+                      <label>Time</label>
+                      <input type="time">
+                    </div>
+                    <div class="field">
+                      <label>Select</label>
+                      <select>
+                        <optgroup label="optgroup">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label>Select (multiple attr)</label>
+                      <select multiple="">
+                        <optgroup label="optgroup">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label>Select (size attr)</label>
+                      <select size="4">
+                        <optgroup label="optgroup">
+                          <option>option 1</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                        </optgroup>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label>Datalist</label>
+                      <input list="datalist">
+                      <datalist id="datalist">
+                        <option value="option 1"></option>
+                        <option value="option 2"></option>
+                        <option value="option 3"></option>
+                      </datalist>
+                    </div>
+                    <div class="field">
+                      <label>Radio</label>
+                      <label class="radio">
+                        <input type="radio"><span>Radio</span>
+                      </label>
+                    </div>
+                    <div class="field">
+                      <label>Checkbox</label>
+                      <label class="checkbox"> 
+                        <input type="checkbox"><span>Checkbox</span>
+                      </label>
+                    </div>
+                    <div class="field">
+                      <label>Range</label>
+                      <input type="range">
+                    </div>
+                    <div class="field">
+                      <label>File</label>
+                      <label class="choose-file">
+                        <input type="file">
+                      </label>
+                    </div>
+                    <div class="field">
+                      <label>Submit</label>
+                      <input class="btn btn--primary" type="submit">
+                    </div>
+                    <div class="field">
+                      <label>Reset</label>
+                      <input class="btn btn--danger" type="reset">
+                    </div>
+                    <div class="field">
+                      <label>Button (input tag)</label>
+                      <input class="btn" type="button" value="Button" disabled>
+                    </div>
+                    <div class="field">
+                      <label>Button (button tag)</label>
+                      <button class="btn">Button</button>
+                    </div>
                   </div>
-                  <div class="item">
-                    <ui-button tag="button" type="primary" disabled>Button primary disabled</ui-button>
-                  </div>
-                  <div class="item">
-                    <ui-button tag="a" href="hello.html" type="danger">Link danger</ui-button>
-                  </div>
-                  <div class="item">
-                    <ui-button tag="a" href="hello.html" type="success">Link success icon-left</ui-button>
-                  </div>
-                  <div class="item">
-                    <ui-button tag="a" href="hello.html" type="primary">Link success icon-right</ui-button>
-                  </div>
-                </div>
-              </tab>
-              <tab name="Tab 3">
-                <p>Tab 3</p>
+                </form>
               </tab>
             </ui-tabs>
           </div>

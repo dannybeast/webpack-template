@@ -3,7 +3,9 @@ const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin')
 // const ImageminPlugin = require('imagemin-webpack-plugin').default
 // const imageminMozjpeg = require('imagemin-mozjpeg');
 const {
@@ -29,7 +31,7 @@ module.exports = {
   },
   entry: {
     app: PATHS.src,
-    mnp: `${PATHS.src}/mnp.js`
+    //mnp: `${PATHS.src}/mnp.js`
   },
   output: {
     // [hash]
@@ -62,7 +64,9 @@ module.exports = {
           {
             use: [{
               loader: 'pug-loader',
-              options: { pretty: true },
+              options: {
+                pretty: true
+              },
             }]
           }
         ]
@@ -91,7 +95,7 @@ module.exports = {
         options: {
           name: '[name].[ext]'
         }
-      }, 
+      },
       {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
@@ -166,7 +170,7 @@ module.exports = {
     new CopyWebpackPlugin([{
         from: `${PATHS.src}/${PATHS.assets}images`,
         to: `${PATHS.assets}images`
-      },{
+      }, {
         from: `${PATHS.src}/${PATHS.assets}icons`,
         to: `${PATHS.assets}icons`
       },

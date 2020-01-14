@@ -34,7 +34,7 @@ body {
 section,
 .section {
   position: relative;
-  @include paddingY(60px, 60px);
+  @include offsetY('margin', 80px);
 }
 
 .wrapper {

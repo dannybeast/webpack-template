@@ -28,7 +28,7 @@ export default {
 <style lang="scss" scoped>
 
     // vars
-    @import  '../../../assets/scss/utils/vars';
+    @import  '~/assets/scss/utils/vars';
     $radius: 5px;
 
     // body

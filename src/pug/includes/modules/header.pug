@@ -2,6 +2,7 @@ the-header
   template(slot-scope="props")
     +b.HEADER.header(v-on:click="props.onCl()")
       .container
+        ui-hamburger
         a(href="/" class="header__logo")
         h1.header__slogan {{test}} {{props.slogan}} 
         include nav

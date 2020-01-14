@@ -1,0 +1,40 @@
+// кнопка
+.btn {
+    position: relative;
+    cursor: pointer;
+    border: solid 2px transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    background: $neutral-regular;
+    padding: 14px 20px;
+    color: #000;
+    font-family: $mainFont;
+    line-height: 1;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all .2s $anim;
+    $parent: &;
+
+    &:active {
+        transform: scale(0.96);
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+
+    &.disabled {
+        border: 2px solid $neutral-regular;
+        background-color: $neutral-regular;
+        cursor: default;
+        pointer-events: none;
+    }
+}

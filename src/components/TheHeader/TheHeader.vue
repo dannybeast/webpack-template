@@ -42,7 +42,9 @@ export default {
             display: flex;
             align-items: center;
         }
-
+        .nav-button{
+            margin-right:15px;
+        }
         &__logo {
             width: 50px;
             height: 50px;

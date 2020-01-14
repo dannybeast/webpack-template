@@ -189,18 +189,6 @@ li {
   }
 }
 
-.strong-list {
-  font-weight: 700;
-  margin-bottom: 2em;
-
-  li {
-    &:before {
-      height: 2px !important;
-      top: 0.55em !important;
-    }
-  }
-}
-
 // tables
 @mixin tableStyle {
   table {
@@ -227,7 +215,6 @@ li {
 .typography {
   font-size: $base-font-size;
   line-height: $base-line-height;
-
   letter-spacing: normal;
 
   p {
@@ -291,37 +278,37 @@ li {
   h1,
   .h1 {
     @extend .h1;
-    margin: 1em 0 0.5em;
+    @extend .block-margins;
   }
 
   h2,
   .h2 {
     @extend .h2;
-    margin: 1em 0 0.5em;
+    @extend .block-margins;
   }
 
   h3,
   .h3 {
     @extend .h3;
-    margin: 1em 0 0.5em;
+    @extend .block-margins;
   }
 
   h4,
   .h4 {
     @extend .h4;
-    margin: 1em 0 0.5em;
+    @extend .block-margins;
   }
 
   h5,
   .h5 {
     @extend .h5;
-    margin: 1em 0 0.5em;
+    @extend .block-margins;
   }
 
   h6,
   .h6 {
     @extend .h6;
-    margin: 1em 0 0.5em;
+    @extend .block-margins;
   }
 
   p,

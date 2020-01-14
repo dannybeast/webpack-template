@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 
     // vars
-    @import  '../../../assets/scss/utils/vars';
+    @import  '~/assets/scss/utils/vars';
     $border-width: 1px;
     $border-color: $border-base;
     $padding: 30px;

@@ -1,3 +1,5 @@
+@import "_spacing-helpers";
+
 // px to rem
 @function rem($pixels, $context: $mainFontSize) {
   @if (unitless($pixels)) {
@@ -25,15 +27,16 @@
 }
 
 // Вертикальный ритм
-
-@mixin paddingY($valueTop, $valueBottom:$valueTop) {
+@mixin offsetY($type, $valueTop, $valueBottom:$valueTop) {
   @if $valueTop !=0 {
-    padding-top: $valueTop;
-    @include sm(padding-top, $valueTop/2);
+    #{$type}-top: $valueTop;
+    @include md(#{$type}-top, $valueTop/1.33333333);
+    @include sm(#{$type}-top, $valueTop/2);
   }
 
   @if $valueBottom !=0 {
-    padding-bottom: $valueBottom;
-    @include sm(padding-bottom, $valueBottom/2);
+    #{$type}-bottom: $valueBottom;
+    @include md(#{$type}-bottom, $valueBottom/1.33333333);
+    @include sm(#{$type}-bottom, $valueBottom/2);
   }
 }

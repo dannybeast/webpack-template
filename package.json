@@ -9,7 +9,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "call npm run build && call git add ."
+      "pre-commit": "call npm run build && git add ."
     }
   },
   "browserslist": [

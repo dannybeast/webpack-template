@@ -54,7 +54,7 @@ block content
                 input(type='url')
               +b.field
                 label Tel
-                input(type='tel')
+                input(type='tel' class="js-phone-mask")
               +b.field
                 label Search
                 input(type='search')
@@ -114,7 +114,7 @@ block content
                   input(type='radio')
                   span Radio
 
-              +b.field
+              +b.field(class="--error")
                 label Checkbox
 
                 +b.LABEL.checkbox 
@@ -141,6 +141,14 @@ block content
                 label Button (button tag)
                 button.btn Button
 
+      +b.modal(id="foo")
+        +e.close.js-modal-close X
+        +e.top
+          +e.H3.title Modal #Foo
+        +e.content
+          .typography
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, dicta fuga. Ipsa sed voluptas quibusdam eligendi. Voluptas laboriosam enim optio, voluptatem maxime, minus, consequatur culpa earum expedita odio fugit suscipit!
+        +e.bottom
 block script
   script(src="assets/js/vendors.js")
   script(src="assets/js/app.js")

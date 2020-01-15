@@ -1,4 +1,4 @@
-// row
+// row demo
 .form-fields {
     @include row-flex();
     margin-bottom: -1em;
@@ -13,20 +13,30 @@
 }
 
 // FORM STYLES
-$margin: 5px;
-$border-width: 1px;
-$border-color: $border-base;
-$border-color-danger: $danger-color;
-$field-radius: 2px;
+$field-margin: 5px;
+$field-border-width: 2px;
+$field-border-color: $border-base;
+$field-color-danger: $danger-color;
+$field-radius: 5px;
 $field-height: 45px;
 $field-bg: transparent;
 
 .field {
     &--error {
-        color: $danger-color;
+        color: $field-color-danger;
 
         * {
-            border-color: $danger-color !important;
+            border-color: $field-color-danger !important;
+        }
+
+        // checkbox & radio error styles
+        .checkbox,
+        .radio {
+            span {
+                &:before {
+                    border-color: $field-color-danger;
+                }
+            }
         }
     }
 }
@@ -41,10 +51,10 @@ $field-bg: transparent;
 }
 
 optgroup {
-    padding-top: 5px;
+    padding-top: $field-margin;
 
     option {
-        padding: 5px 0;
+        padding: $field-margin 0;
     }
 }
 
@@ -60,6 +70,7 @@ input[type=submit] {
 button[disabled],
 input[disabled] {
     cursor: default;
+    pointer-events: none;
     opacity: 0.5;
 }
 
@@ -76,10 +87,10 @@ textarea {
 label {
     display: block;
     line-height: 1.1;
-    margin: $margin 0;
+    margin: $field-margin 0;
     font-size: $base-font-size/1.2;
     font-weight: 700;
-    margin-bottom: $margin*2;
+    margin-bottom: $field-margin*2;
 }
 
 input[type="radio"]+label,
@@ -98,8 +109,8 @@ textarea {
 }
 
 select {
-    border: 1px solid $border-color;
-    background-color: #fff;
+    border: $field-border-width solid $field-border-color;
+    background-color: $field-bg;
 }
 
 input[type=checkbox],
@@ -138,7 +149,7 @@ input[type=color],
 input:not([type]),
 select,
 textarea {
-    border: $border-width solid $border-color;
+    border: $field-border-width solid $field-border-color;
     border-radius: $field-radius;
     background: $field-bg;
     vertical-align: middle;
@@ -146,12 +157,12 @@ textarea {
     width: 100%;
     padding-left: 10px;
     height: $field-height;
-    margin-bottom: $margin;
+    margin-bottom: $field-margin;
     transition: all $animSpeed $anim;
 
     &:focus,
     &:hover {
-        border-color: darken($border-color, 15%);
+        border-color: darken($field-border-color, 15%);
     }
 }
 
@@ -179,12 +190,12 @@ select[readonly],
 textarea[readonly] {
     background-color: $border-light;
     color: $neutral-primary;
-    border-color: $border-color;
+    border-color: $field-border-color;
 }
 
 input:invalid,
 textarea:invalid,
 select:invalid {
-    color: $border-color-danger;
-    border-color: $border-color-danger;
+    color: $field-color-danger !important;
+    border-color: $field-color-danger !important;
 }

@@ -14,7 +14,7 @@
           <header class="header" v-on:click="props.onCl()">
             <div class="container">
               <ui-hamburger></ui-hamburger><a class="header__logo" href="/"></a>
-              <h1 class="header__slogan">{{test}} {{props.slogan}} </h1>
+              <h1 class="header__slogan">Boilerplate</h1>
               <nav class="nav">
                 <ul>
                   <li><a href="#">Link</a></li>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="field">
                       <label>Tel</label>
-                      <input type="tel">
+                      <input class="js-phone-mask" type="tel">
                     </div>
                     <div class="field">
                       <label>Search</label>
@@ -161,7 +161,7 @@
                         <input type="radio"><span>Radio</span>
                       </label>
                     </div>
-                    <div class="field">
+                    <div class="field field--error">
                       <label>Checkbox</label>
                       <label class="checkbox"> 
                         <input type="checkbox"><span>Checkbox</span>
@@ -197,6 +197,21 @@
                 </form>
               </tab>
             </ui-tabs>
+            <div class="modal" id="foo">
+              <div class="modal__close js-modal-close">X
+              </div>
+              <div class="modal__top">
+                <h3 class="modal__title">Modal #Foo
+                </h3>
+              </div>
+              <div class="modal__content">
+                <div class="typography">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, dicta fuga. Ipsa sed voluptas quibusdam eligendi. Voluptas laboriosam enim optio, voluptatem maxime, minus, consequatur culpa earum expedita odio fugit suscipit!</p>
+                </div>
+              </div>
+              <div class="modal__bottom">
+              </div>
+            </div>
           </div>
         </section>
       </div>

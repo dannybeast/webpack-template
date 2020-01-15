@@ -37,7 +37,6 @@ export default {
     $padding: 30px;
     $activeBg: $primary-color;
 
-    // body
     .tabs{
         &__nav{
             display: flex;
@@ -57,7 +56,6 @@ export default {
                         border-right: solid $border-width $border-color;
                     }
                 }
-                // active tab
                 &.is-active{
                     a{
                         background: $activeBg;

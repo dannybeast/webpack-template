@@ -32,7 +32,7 @@
     "postcss-inline-svg": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-svgo": "^4.0.2",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^8.0.0",

@@ -1,0 +1,39 @@
++b.HEADER.header 
+    .container 
+        +e.row
+
+            +e.A(href="profile-account.html" class="logo")
+                img(src="assets/images/logo/logo.svg", alt="")
+
+            +e.NAV.nav 
+                +e.UL
+                    +e.LI(class=( pageName === "account" ? " is-active" : undefined))
+                        +e.A(href="profile-account.html") Account
+
+                    +e.LI(class=( pageName === "bounty" ? " is-active" : undefined)) 
+                        +e.A(href="profile-bounty.html") Bounty
+
+                    +e.LI(class=( pageName === "withdraw" ? " is-active" : undefined)) 
+                        +e.A(href="profile-withdraw.html") Withdraw
+                    
+                    +e.LI(class=( pageName === "staking" ? " is-active" : undefined)) 
+                        +e.A(href="profile-staking.html") Staking
+                    
+                    +e.LI(class=( pageName === "history" ? " is-active" : undefined)) 
+                        +e.A(href="profile-history.html") History
+                    
+                    +e.LI(class=( pageName === "settings" ? " is-active" : undefined)) 
+                        +e.A(href="profile-settings.html") Settings	
+                    
+                    +e.LI
+                        +e.A(href="index.html") Logout
+            
+            +e.right 
+
+                +b.A(href="profile-account.html" class="btn --transparent --small")
+                    span Username
+                    +icon('002-user')
+
+                +b.A(href="index.html" class="btn --white --small")
+                    span Logout
+                    +icon('001-key-with-hole')

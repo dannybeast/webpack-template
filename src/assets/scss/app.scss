@@ -1,0 +1,91 @@
+@import "utils/fonts";
+@import "utils/vars";
+@import "utils/smart-grid";
+@import "utils/libs";
+@import "utils/mixins";
+@import "utils/reset";
+
+@import "typography";
+// Helpers
+@import "utils/helpers-classes";
+
+// Modules
+@import "modules/_loader";
+@import "modules/_hamburger";
+@import "modules/_buttons";
+@import "modules/_fields";
+@import "modules/_checkbox-and-radio";
+@import "modules/_header";
+@import "modules/_mobile-menu";
+@import "modules/_footer";
+@import "layouts/_main-layout";
+//@import "modules/_accordion";
+
+
+html,
+body {
+    min-height: 100vh;
+}
+
+html {
+    line-height: $main-line-height;
+    font-size: $main-font-size;
+    color: $main-font-color;
+    @include xxl(font-size, 14px);
+    @include md(font-size, 12px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $main-font;
+    font-weight: $main-font-weight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fafafa;
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.555);
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 8;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    &.overflow-transparent {
+        overflow: hidden;
+    }
+
+    &.overflow {
+        overflow: hidden;
+
+        @include md-block() {
+            &:before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+
+.container {
+    position: relative;
+    @include wrapper();
+}
+
+section {
+    padding: rem(90px) 0;
+    @include md-block() {
+        padding: 80px 0;
+    }
+}

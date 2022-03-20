@@ -1,0 +1,55 @@
++b.mobile-menu
+    +e.top 
+        if pageType != 'profile'
+            // If not auth
+            +b.A(href="login.html" class="btn --white --small")
+                    span Login
+                    +icon('001-key-with-hole')
+
+            +b.A(href="register.html" class="btn --primary --small")
+                span Register
+                +icon('002-user')
+        else 
+            // If auth
+            +b.A(href="profile-account.html" class="btn --primary --small")
+                +icon('002-user')
+                span Username123
+
+    if pageType === 'profile'
+        // If Auth
+        +e.NAV.nav 
+            +e.UL
+                +e.LI(class=( pageName === "account" ? " is-active" : undefined))
+                    +e.A(href="profile-account.html") Account
+
+                +e.LI(class=( pageName === "bounty" ? " is-active" : undefined)) 
+                    +e.A(href="profile-bounty.html") Bounty
+
+                +e.LI(class=( pageName === "withdraw" ? " is-active" : undefined)) 
+                    +e.A(href="profile-withdraw.html") Withdraw
+                
+                +e.LI(class=( pageName === "staking" ? " is-active" : undefined)) 
+                    +e.A(href="profile-staking.html") Staking
+                
+                +e.LI(class=( pageName === "history" ? " is-active" : undefined)) 
+                    +e.A(href="profile-history.html") History
+                
+                +e.LI(class=( pageName === "settings" ? " is-active" : undefined)) 
+                    +e.A(href="profile-settings.html") Settings	
+                
+                +e.LI
+                    +e.A(href="index.html") Logout
+
+    +e.NAV.nav 
+        ul
+            li(class=( pageName === "products" ? " is-active" : undefined))
+                a(href="products.html") Products 
+                        
+            li(class=( pageName === "support" ? " is-active" : undefined))
+                a(href="support.html") Support
+            
+            li(class=( pageName === "company" ? " is-active" : undefined))
+                a(href="company.html") Company
+            
+            li(class=( pageName === "bounty" ? " is-active" : undefined))
+                a(href="bounty.html") Bounty

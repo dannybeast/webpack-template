@@ -1,0 +1,17 @@
+extends ../layout/main
+
+block variables
+    - var title = 'StarterWebpack';
+    - var description = '';
+    - var pageName = 'index';
+
+block content
+  +b.SECTION.intro 
+    .container 
+      +b.typography 
+        h1 Hello World 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quod eaque nemo officiis, dicta sed cumque cum, earum maxime enim consequatur? Incidunt nobis blanditiis dolor eligendi ipsum, ab ipsa nisi?
+
+block script
+  script(src="assets/js/vendors.js")
+  script(src="assets/js/profile.js")

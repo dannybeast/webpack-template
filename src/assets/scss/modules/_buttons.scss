@@ -1,0 +1,54 @@
+.btn {
+    padding: 0 30px;
+    color: #000;
+    background-color: #cfceda;
+    font-size: 14px;
+    font-family: $main-font;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    text-decoration: none;
+    position: relative;
+    border-radius: 4px;
+    font-size: 18px;
+    height: 55px;
+    font-weight: 500;
+    transition: all 0.1s ease;
+    white-space: nowrap;
+    $parent: &;
+
+    svg,
+    img {
+        width: 18px;
+        height: 18px;
+        display: block;
+        &:first-child {
+            margin-right: 10px;
+        }
+        &:last-child {
+            margin-left: 10px;
+        }
+    }
+
+    // Colors
+    &--black {
+        background: #000;
+        color: #fff;
+        &:hover {
+            color: #000;
+            background: $primary-color;
+        }
+    }
+    //
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &[disabled] {
+        background: $border-base;
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}

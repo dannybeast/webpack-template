@@ -1,0 +1,198 @@
+// ul li
+.unordered-list {
+  @extend .block-margins;
+
+  li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: $base-vertical-margin * 0.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: "";
+      width: 17px;
+      height: 2px;
+      display: block;
+      background: #000;
+      position: absolute;
+      top: 0.75em;
+      left: 0;
+    }
+  }
+  &_primary {
+    li {
+      &:before {
+        background: $primary-color !important;
+      }
+    }
+  }
+  &_light {
+    li {
+      color: rgba(#000, 0.6);
+      &:before {
+        background: #e6ded3 !important;
+      }
+    }
+  }
+}
+
+// ol li
+.ordered-list {
+  @extend .block-margins;
+  counter-reset: myCounter;
+
+  li {
+    position: relative;
+    list-style: none;
+    padding-left: 30px;
+    margin-bottom: $base-vertical-margin * 0.5;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      counter-increment: myCounter;
+      color: #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: counter(myCounter) ". ";
+    }
+  }
+}
+
+.separator-wawes {
+  background: url("../images/wawe.png") center repeat-x;
+  width: 100%;
+  height: 23px;
+  margin-top: 60px;
+}
+
+.contacts-icons {
+  @include row-flex();
+  margin-bottom: 60px;
+  @include lg-block() {
+    margin-bottom: 20px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  li {
+    @include col();
+    @include size(2.4);
+    @include size-lg(3);
+    @include size-md(4);
+    @include size-sm(6);
+    @include lg-block() {
+      margin-bottom: 40px;
+    }
+    @include sm-block() {
+      margin-bottom: 30px;
+    }
+  }
+}
+.contacts-buttons {
+  margin-bottom: 60px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.map {
+  background: #eee;
+  box-shadow: 0px 16px 86.45px 8.55px rgba(153, 147, 171, 0.22);
+  height: 670px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 60px;
+  @include lg-block() {
+    height: 420px;
+  }
+  @include sm-block() {
+    height: 320px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contacts-info {
+  margin-bottom: 60px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .typography {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.contacts-icons {
+  @include sm-block() {
+    font-size: 14px;
+  }
+  @include xs-block() {
+    font-size: 12px;
+  }
+  &__icon {
+    margin-bottom: 25px;
+    svg {
+      width: 35px;
+      height: 35px;
+      fill: #b9c0e0;
+    }
+  }
+  &__name {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    @include sm-block() {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    @include xs-block() {
+      font-size: 16px;
+    }
+  }
+  &__content {
+    line-height: 1.4;
+    a {
+      display: block;
+      color: #5061b2;
+    }
+    a,
+    p {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.link-no-decoration {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+}
+
+.contacts-buttons {
+  .button {
+    padding: 0 40px;
+    font-size: 21px;
+    @include sm-block() {
+      font-size: 18px;
+      height: 50px;
+      padding: 0 20px;
+    }
+    @include xs-block() {
+      font-size: 16px;
+      padding: 0 15px;
+    }
+  }
+}

@@ -10,14 +10,25 @@ var settings = {
     mobileFirst: false,
     /* mobileFirst ? 'min-width' : 'max-width' */
     container: {
-        maxWidth: '1200px',
+        maxWidth: '1235px',
         /* max-width оn very large screen */
         fields: '30px' /* side fields */
     },
     breakPoints: {
+        notebookLg: {
+            width: '1600px',
+        },
+        notebook: {
+            width: '1440px',
+        },
+        xxl: {
+            width: '1280px',
+        },
+        xl: {
+            width: '1220px',
+        },
         lg: {
             width: '1100px',
-            /* -> @media (max-width: 1100px) */
         },
         md: {
             width: '992px'
@@ -29,15 +40,6 @@ var settings = {
         xs: {
             width: '360px'
         }
-        /* 
-        We can create any quantity of break points.
-
-        some_name: {
-            width: 'Npx',
-            fields: 'N(px|%|rem)',
-            offset: 'N(px|%|rem)'
-        }
-        */
     }
 };
 

@@ -1,0 +1,149 @@
+.table-wrapper {
+    margin-top: 20px;
+    @include md-block() {
+        overflow: auto;
+    }
+
+    .dataTables_wrapper {
+        .dataTables_length,
+        .dataTables_filter {
+            display: none;
+        }
+    }
+
+    table {
+        tr {
+            th {
+                span {
+                    position: relative;
+                    display: inline-flex;
+                    align-items: center;
+                    vertical-align: top;
+
+                    &:after {
+                        content: "";
+                        width: 10px;
+                        height: 11px;
+                        display: block;
+                        margin-left: 8px;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                    }
+                }
+
+                &.sorting {
+                    span {
+                        &:after {
+                            background-image: url("../images/datatables/sorting.svg");
+                        }
+                    }
+                }
+
+                &.sorting_asc {
+                    span {
+                        &:after {
+                            background-image: url("../images/datatables/sorting_asc.svg");
+                        }
+                    }
+                }
+
+                &.sorting_desc {
+                    span {
+                        &:after {
+                            background-image: url("../images/datatables/sorting_desc.svg");
+                        }
+                    }
+                }
+
+                &.no-sorting {
+                    cursor: default;
+                    pointer-events: none;
+                    span {
+                        &:after {
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dataTables_info {
+        display: none;
+    }
+
+    .dataTables_paginate {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 25px;
+        margin-left: -5px;
+        margin-right: -5px;
+
+        & > * {
+            margin: 5px;
+        }
+
+        & > span {
+            order: 3;
+            border-radius: 2px;
+
+            display: flex;
+
+            a {
+                @include paginationBtn();
+
+                &.current {
+                    @include paginationBtnActive();
+                }
+            }
+        }
+
+        .ellipsis {
+            padding: 8px 0;
+            line-height: 1;
+            font-size: 16px;
+            display: block;
+            margin-left: 3px;
+            background: transparent;
+            color: rgba(#000, 0.3);
+        }
+
+        & > .paginate_button {
+            padding: 8px 13px;
+            line-height: 1;
+            font-size: 14px;
+            text-decoration: none;
+            display: none;
+            border-radius: 2px;
+            background: #000;
+            color: #fff;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &.next {
+                margin-right: auto;
+                margin-left: 5px;
+            }
+
+            &.disabled {
+                color: rgba(#000, 0.3);
+                pointer-events: none;
+                cursor: default;
+                background: $border-base;
+            }
+        }
+    }
+}
+
+.dataTables_empty {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #999 !important;
+    padding: 30px 0 !important;
+    font-size: 16px !important;
+}

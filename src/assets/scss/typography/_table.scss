@@ -1,0 +1,31 @@
+@mixin tableStyle {
+  table {
+    width: 100%;
+    th,
+    td {
+      padding: 10px;
+      vertical-align: top;
+      font-size: 14px;
+      border-bottom: solid 1px $gray-color;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    tr {
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+    th {
+      border: none;
+      padding-left: 0;
+    }
+  }
+}
+
+@include tableStyle();

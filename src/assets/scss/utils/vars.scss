@@ -1,36 +1,32 @@
-// Font
-$mainFont : 'Montserrat',
-Helvetica,
-Arial,
-sans-serif;
+// Fonts
+$main-font: "Rubik", sans-serif;
+$accent-font: "Manrope", sans-serif;
+$main-font-color: #000;
+$main-font-size: 16px;
+$main-font-weight: 400;
+$main-line-height: 1.25;
 
-// Size
-$mainFontColor : #101010;
-$mainFontSize : 18px;
-$mainFontWeight : 400;
-$mainLineHeight : 1.4;
 
 // Main color
-$default-color : #ffffff;
-$primary-color : #444ce0;
-$success-color : #26de81;
-$danger-color : #fc5c65;
-$warning-color : #fed330;
-$light-color : #999999;
-$purple-color : #8854d0;
-
-// Neutral Color
-$neutral-primary : #303133;
-$neutral-regular : #606266;
-$neutral-secondary : #909399;
-$neutral-placeholder : #C0C4CC;
-
-// Border Color
-$border-base : #DCDFE6;
-$border-light : #E4E7ED;
-$border-lighter : #EBEEF5;
-$border-lightex : #F2F6FC;
+$accent-color: #ffee87;
+$gray-color: #efefef;
+$default-color: #ffffff;
+$primary-color: #e14135;
+$success-color: #1ec16f;
+$danger-color: #eb001b;
+$warning-color: #ff5100;
+$border-base: #dbdddc;
 
 // Animations
-$anim: cubic-bezier(0.6, 0.2, 0.1, 1);
-$animSpeed: 0.5s;
+$anim: cubic-bezier(0.58, 0.3, 0.005, 1);
+$animSpeed: 0.4s;
+
+
+// fields
+$field-margin: 25px;
+$field-border-width: 2px;
+$field-border-color: $border-base;
+$field-color-danger: $danger-color;
+$field-radius: 0;
+$field-height: 50px;
+$field-bg: transparent;

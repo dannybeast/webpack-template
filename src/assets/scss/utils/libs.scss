@@ -1,2 +1,5 @@
 // libs here
-// @import '../../../../node_modules/swiper/css/swiper.min';
+@import "~swiper/swiper-bundle.min";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "../libs/fancybox";
+@import "~awesome-notifications/dist/style.css";

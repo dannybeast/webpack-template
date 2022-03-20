@@ -1,154 +1,17 @@
 extends ../layout/main
 
 block variables
-  - var title = 'Webpack + Pug';
-  - var description = 'Description for Webpack + Pug';
-  - var pageClass = 'index-page';
+    - var title = 'StarterWebpack';
+    - var description = '';
+    - var pageName = 'index';
 
 block content
-  +b.SECTION.section
-    .container
-      // Tabs
-      ui-tabs
-      
-        tab(name="Typography")
-          .typography
-            h1 Title 1
-            p <a href="#">Lorem ipsum</a>, <i>dolor</i> sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!
-            p <strong>Lorem ipsum dolor</strong>, sit amet consectetur adipisicing elit. Mollitia recusandae, in necessitatibus quod laboriosam voluptatem ullam magnam porro ad cumque adipisci dolorum a animi facere quisquam odio doloremque dolores voluptatibus.
-            h2 Title 2
-            ul
-              li List item
-              li List item
-              li List item
-            p
-              big Sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!
-            p
-              small Sit amet consectetur adipisicing elit. Accusamus maiores tenetur, quae rerum at earum saepe ea explicabo? Labore animi sapiente ipsa adipisci beatae ut incidunt, eveniet neque ipsum dolorum!
-            h3 Title 3
-            ol
-              li List item
-              li List item
-              li List item
-            h4 Title 4
-            h5 Title 5
-            h6 Title 6
+  +b.SECTION.intro 
+    .container 
+      +b.typography 
+        h1 Hello World 
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quod eaque nemo officiis, dicta sed cumque cum, earum maxime enim consequatur? Incidunt nobis blanditiis dolor eligendi ipsum, ab ipsa nisi?
 
-        tab(name="Forms" :selected="true")
-          form
-            .form-fields
-              +b.field(class="--error")
-                label Text  
-                input(type='text')
-              +b.field
-                label Password
-                input(type='password')
-              +b.field
-                label Number
-                input(type='number' min="0")
-              +b.field
-                label Email
-                input(type='email' disabled)
-              +b.field
-                label Url
-                input(type='url')
-              +b.field
-                label Tel
-                input(type='tel' class="js-phone-mask")
-              +b.field
-                label Search
-                input(type='search')
-              +b.field
-                label Textarea
-                textarea
-              +b.field
-                label Date
-                input(type='date')
-              +b.field
-                label Datetime
-                input(type='datetime')
-              +b.field
-                label Datetime-local
-                input(type='datetime-local')
-              +b.field
-                label Month
-                input(type='month')
-              +b.field
-                label Week
-                input(type='week')
-              +b.field
-                label Time
-                input(type='time')
-              +b.field
-                label Select
-                select
-                  optgroup(label='optgroup')
-                    option option 1
-                    option option 2
-                    option option 3
-              +b.field
-                label Select (multiple attr)
-                select(multiple='')
-                  optgroup(label='optgroup')
-                    option option 1
-                    option option 2
-                    option option 3
-              +b.field
-                label Select (size attr)
-                select(size='4')
-                  optgroup(label='optgroup')
-                    option option 1
-                    option option 2
-                    option option 3
-              +b.field
-                label Datalist
-                input(list='datalist')
-                datalist#datalist
-                  option(value='option 1')
-                  option(value='option 2')
-                  option(value='option 3')
-              +b.field
-                label Radio
-
-                +b.LABEL.radio
-                  input(type='radio')
-                  span Radio
-
-              +b.field(class="--error")
-                label Checkbox
-
-                +b.LABEL.checkbox 
-                  input(type='checkbox')
-                  span Checkbox
-
-              +b.field
-                label Range
-                input(type='range')
-              +b.field
-                label File
-                +b.LABEL.choose-file
-                  input(type='file')
-              +b.field
-                label Submit
-                input(type='submit' class="btn btn--primary")
-              +b.field
-                label Reset
-                input(type='reset' class="btn btn--danger")
-              +b.field
-                label Button (input tag)
-                input(type='button', value='Button' class="btn" disabled)
-              +b.field
-                label Button (button tag)
-                button.btn Button
-
-      +b.modal(id="foo")
-        +e.close.js-modal-close X
-        +e.top
-          +e.H3.title Modal #Foo
-        +e.content
-          .typography
-            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, dicta fuga. Ipsa sed voluptas quibusdam eligendi. Voluptas laboriosam enim optio, voluptatem maxime, minus, consequatur culpa earum expedita odio fugit suscipit!
-        +e.bottom
 block script
   script(src="assets/js/vendors.js")
   script(src="assets/js/app.js")

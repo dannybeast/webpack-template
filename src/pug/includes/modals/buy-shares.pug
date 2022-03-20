@@ -1,0 +1,33 @@
+// buy-shares
+#buy-shares.modal
+  +b.modal-inner
+    +e.close.js-close-modal
+      svg.svg-icon
+        use(href='assets/icons/sprite.svg#icon-cross')
+    +b.modal-header
+      +b.H3.title(class="--after-line")
+        span Buy shares
+    .modal-content
+      +b.buy-shares
+        
+        +b.field
+          label Public offer:
+          textarea(placeholder="Public offer")
+
+        +b.field
+          +b.field-shares
+            label Nissan gtr
+            img(src="assets/images/investments/1-lg.png", alt="")
+        
+        +b.field
+          label Shares(%)
+          input(type="text" name="shares")
+
+        +b.field
+          label Amount
+          p
+            strong $0
+
+    +b.modal-footer(class="--center")
+      +b.BUTTON.btn(class="--primary --size-md")
+        span Next step

@@ -8,3 +8,7 @@ mixin item(title, descr)
   .item
     h2.item-title= title
     p.item-descr= descr
+    
+mixin icon(name)
+  svg.svg-icon
+    use(href=`assets/icons/sprite.svg#icon-${name}`)

@@ -1,27 +1,23 @@
 {
-  "name": "webpack",
+  "name": "StarterWebpack",
   "version": "1.0.0",
-  "description": "My template",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --config ./config/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --config ./config/webpack.dev.conf.js",
     "build": "webpack --config ./config/webpack.build.conf.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build && git add ."
-    }
   },
   "browserslist": [
     "> 1%",
     "last 3 version"
   ],
-  "author": "",
+  "author": "webkrd@mail.ru",
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
     "autoprefixer": "^9.7.1",
+    "autoresize-textarea": "^1.1.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^3.0.0",
@@ -31,11 +27,8 @@
     "cssnano": "^4.1.10",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^4.0.0-beta.8",
-    "husky": "^4.0.7",
-    "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^0.8.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "postcss-inline-svg": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-svgo": "^4.0.2",
@@ -59,7 +52,31 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "apexcharts": "^3.18.1",
+    "autosize": "^4.0.2",
+    "awesome-notifications": "^3.1.1",
+    "bootstrap": "^4.5.3",
+    "chart.js": "^2.9.3",
+    "datatables": "^1.10.18",
+    "dotenv": "^8.2.0",
+    "emergence.js": "^1.1.2",
+    "gsap": "^3.6.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "imask": "^6.0.1",
-    "vue": "^2.6.10"
+    "jquery": "^3.4.1",
+    "jquery-validation": "^1.19.1",
+    "lazyload": "^2.0.0-rc.2",
+    "lg-video.js": "^1.0.0",
+    "lightgallery.js": "^1.1.3",
+    "parallax-js": "^3.1.0",
+    "sass-em": "^1.0.3",
+    "scrollmagic": "^2.0.8",
+    "sticky-sidebar": "^3.3.1",
+    "sticky-sidebar-v2": "^1.0.1",
+    "swiper": "^6.4.15",
+    "webpack-svgstore-plugin": "^4.1.0",
+    "youtube-thumbnail": "^1.3.0"
   }
 }

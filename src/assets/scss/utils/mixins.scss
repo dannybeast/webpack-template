@@ -1,38 +1,99 @@
-@import "helpers-spacing";
-@import "helpers-classes";
+//@import "helpers-spacing";
+
+@function em-separator($list) {
+ @if function-exists("list-separator") ==true {
+  @return list-separator($list);
+ }
+
+ $test-list: ();
+
+ @each $item in $list {
+  $test-list: append($test-list, $item, space);
+ }
+
+ @return if($test-list==$list, space, comma);
+}
+
+@function em($values...) {
+ $context: nth($values, length($values));
+ $result: ();
+ $separator: em-separator($values);
+
+ @for $i from 1 through length($values) - 1 {
+  $value: nth($values, $i);
+
+  @if type-of($value) == "number" and unit($value) == "px" {
+   $result: append($result, $value / $context * 1em, $separator);
+  } @else if type-of($value) == "list" {
+   $result: append($result, em(append($value, $context) ...), $separator);
+  } @else {
+   $result: append($result, $value, $separator);
+  }
+ }
+
+ @return if(length($result) ==1, nth($result, 1), $result);
+}
+
+@mixin em($properties, $context) {
+ @each $property in map-keys($properties) {
+  #{$property}: em(append(map-get($properties, $property), $context) ...);
+ }
+}
 
 // px to rem
-@function rem($pixels, $context: $mainFontSize) {
-  @if (unitless($pixels)) {
-    $pixels: $pixels * 1px;
-  }
+@function rem($pixels, $context: $main-font-size) {
+ @if (unitless($pixels)) {
+  $pixels: $pixels * 1px;
+ }
 
-  @if (unitless($context)) {
-    $context: $context * 1px;
-  }
+ @if (unitless($context)) {
+  $context: $context * 1px;
+ }
 
-  @return $pixels / $context * 1rem;
+ @return $pixels / $context * 1rem;
 }
 
 // усечение текста @include truncate(100%);
 @mixin truncate($truncation-boundary) {
-  max-width: $truncation-boundary;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+ max-width: $truncation-boundary;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
 }
 
 // Вертикальный ритм
-@mixin offsetY($type, $valueTop, $valueBottom:$valueTop) {
-  @if $valueTop !=0 {
-    #{$type}-top: $valueTop;
-    @include md(#{$type}-top, $valueTop/1.33333333);
-    @include sm(#{$type}-top, $valueTop/2);
-  }
+@mixin offsetY($type, $valueTop, $valueBottom: $valueTop) {
+ @if $valueTop !=0 {
+  #{$type}-top: $valueTop;
+  // @include md(#{$type}-top, $valueTop/1.33333333);
+  // @include sm(#{$type}-top, $valueTop/2);
+ }
 
-  @if $valueBottom !=0 {
-    #{$type}-bottom: $valueBottom;
-    @include md(#{$type}-bottom, $valueBottom/1.33333333);
-    @include sm(#{$type}-bottom, $valueBottom/2);
-  }
+ @if $valueBottom !=0 {
+  #{$type}-bottom: $valueBottom;
+  // @include md(#{$type}-bottom, $valueBottom/1.33333333);
+  // @include sm(#{$type}-bottom, $valueBottom/2);
+ }
+}
+
+@mixin paginationBtn() {
+ height: $size;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ min-width: $size;
+ text-align: center;
+ font-size: 14px;
+ color: #000;
+ text-decoration: none;
+ box-shadow: 0 0 23px 4px rgba(0, 1, 1, 0.05);
+ margin: 0 10px 0 0;
+ border: solid 4px transparent;
+ &:not(.is-active):hover {
+  color: $primary-color;
+ }
+}
+@mixin paginationBtnActive() {
+ font-weight: 700;
+ border-color: $primary-color;
 }

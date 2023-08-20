@@ -2,8 +2,8 @@ const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin =
+//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const buildWebpackConfig = merge(baseWebpackConfig, {
   // BUILD config
   mode: 'production',
@@ -29,9 +29,9 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
     ],
   },
   plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-    }),
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static',
+    // }),
   ],
 });
 

@@ -1,23 +1,75 @@
-# Install dependencies:
+# Установка
+
 npm install
 
-# Server with hot reload at http://localhost:8080/
+# Версии
+
+Node v16.13.0 |
+NPM v8.12.1
+
+# Локальный сервер: <http://localhost:8080/>
+
 npm run dev
 
-# Output will be at dist/ folder
+# Сборка в prod
+
 npm run build
-```
 
-## Project Structure:
+### Структура проекта
 
-* `src/pug/layout` - put custom layout for pages
-* `src/pug/includes` - all app includes
-* `src/pug/utils` - pug mixins and other
-* `src/pug/pages` - put custom app pages. Don't forget to import them in `index.js`
-* `src/assets/scss` - put custom app SCSS styles here. Don't forget to import them in `index.js`
-* `src/assets/css` - the same as above but CSS here. Don't forget to import them in `index.js`
-* `src/assets/img` - put images here. Don't forget to use correct path: `assets/img/some.jpg`
-* `src/js` - put custom app scripts here
-* `src/index.js` - main app file where you include/import all required libs and init app
-* `src/components` - folder with custom `.vue` components
-* `static/` - folder with extra static assets that will be copied into output folder
+* `src/pug/layout` - pug обертки
+* `src/pug/includes/modals` - pug модальные окна
+* `src/pug/includes/modules` - pug модули
+* `src/pug/utils` - pug миксины и тд
+* `src/pug/pages` - pug страницы
+* `src/assets/scss` - стили, разбитые по логическим папкам и подключены в app.scss
+* `src/assets/images` - картинки, разбитые по логическим папкам
+* `src/assets/icons` - тут все иконки svg для спрайтов, в pug можно использовать в виде миксина - +icon('iconFileName')
+* `src/js` - скприты, разбитые по логическим папкам и подключены в общие файлы (точки входа webpack, которые заданы в config/webpack.base.conf - entry)
+* `src/static` - статические файлы, не требующие обработки webpack, типа favicon
+
+### Правила написания БЭМ
+
+Стили пишутся по методологии **БЭМ**, где:
+`block-name` - блок,  
+`block-name__element-name` - элемент,  
+`block-name--modifier-name` - модификатор.
+
+### Брейкпоинты
+
+Устанавливаются в /smartgrid.js (Команда node smartgrid - соберет smart-grid.scss)
+
+### Препроцессор
+
+* Для написания стилей используется препроцессор **Sass** (синтаксис **scss**).
+
+### Работа со стилями SCSS
+
+* **Внутри блока описывается внутреняя геометрия и стилизация.** Для указания внешней геометрии (позиционирования, отступов и т.д.) испольузем миксы классов. `(Например тут внешний отступ задает класс родителя http://joxi.ru/Drl1ROXhKdzY0m)`
+
+* **Ни один блок не должен влиять на другие блоки и их элементы.** Если необходимо выполнить дополнительную стилизацию блока, находящегося внутри другого, то так же используем микс. `(Например такой белой кнопки в проекте нет и она будет только в этом блоке, тогда используем микс относительно родителя - http://joxi.ru/v29koJBI4jK7Rr )`
+
+* **Названия всех файлов начинается с нижнего подчёркивания.** Имя файла должно быть таким же, как имя блока, для стилизации которого создан данный файл. `(Например - http://joxi.ru/Drl1ROXhKdzMom)`
+
+* **Стили должны быть логически разбиты на:**
+  * modules (переиспользуемые частицы, к примеру кнопки),
+  * sections (состоит из модулей, например футер, шапка, секция со списком новостей),
+  * layouts (обертки страниц, чаще всего они разные у ЛК, Сайта и авторизации).
+  * Допускаются другие типы. файлы подключаются вручную в app.scss и разделяются на типы, modules затем sections. `(Например - http://joxi.ru/4AkkaOnIjVLMyA)`
+
+* **Все значения, заданные в px, необходимо переводить в rem**, использую функцию `rem()`. Кроме обводок в 1-2 пикселя.
+
+* **По максимуму используем scss переменные, местами css переменные**, если какие либо значения повторяются (цвета, тени, отступы итд).
+
+* **Все медиа запросы делаем так** `@include sm-block() {}` c помощью smartgrid.
+
+* **Вся типографика** (ссылки, заголовки, списки и тд) описана в `.typography` и задается в папке `scss/typography`
+* Если необходим **класс, который выполняет одно действие** и может быть переиспользован, например .color-danger - задает красные цвет, то все такие классы описаны в папке utils/helpers-classes - `Например - http://joxi.ru/ZrJZGq9tQkyeZr`
+
+### Работа с git
+
+* Берем последнюю версию c ветки master
+* Создаем ветку с именем `feature/2323_feat-chat` - где **2323** это номер задачи, нижнее подчеркивание и короткое описание задачи. Тут ведем разработку конкретно по этой задаче.
+* Все коммиты должны иметь вид: `Feat: Добавил кнопку в шапку` , `Fix: Поправил баг с кнопкой`, `Refactor: Отрефакторил блок заказов`
+* Коммиты можно делать чаще. В идеале коммит содержит только то, что в нем описано. В идеале =)
+* Если задача выполнена создаем merge request в ветку master

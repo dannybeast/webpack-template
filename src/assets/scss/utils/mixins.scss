@@ -75,3 +75,32 @@
     // @include sm(#{$type}-bottom, $valueBottom/2);
   }
 }
+
+// Aspect ratio
+@mixin aspect($width: 16, $height: 9) {
+  aspect-ratio: $width / $height;
+
+  @supports not (aspect-ratio: $width / $height) {
+    &::before {
+      content: '';
+      float: left;
+      padding-top: calc((#{$height} / #{$width}) * 100%);
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+}
+// Font-face
+@mixin font($f-name, $f-style, $f-weight, $f-url) {
+  @font-face {
+    font-family: $f-name;
+    font-style: $f-style;
+    font-weight: $f-weight;
+    font-display: swap;
+    src: url($f-url) format('woff');
+  }
+}

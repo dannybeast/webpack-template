@@ -16,10 +16,6 @@ html(lang='en')
     block head
 
   body
-  
-    .loader
-      img(src="assets/images/spinner.svg", alt="")
-
     main#app.wrapper
       // Main layout
       +b.main-layout
@@ -32,10 +28,4 @@ html(lang='en')
           // End page  
 
         include ../includes/modules/_footer
-
-      // Mobile menu
-      include ../includes/modules/_mobile-menu
-
-      // Modals
-      //-include ../includes/modals/calculator
     block script

@@ -4,33 +4,33 @@
 .h4,
 .h5,
 .h6 {
-    font-weight: $heading-font-weight;
-    line-height: 1.25;
-    font-family: $main-font;
-    font-weight: 600;
+  font-weight: $heading-font-weight;
+  line-height: 1.25;
+  font-family: $main-font;
+  font-weight: 600;
 }
 
 .h1 {
-    font-size: 250%;
+  font-size: 250%;
 }
 
 .h2 {
-    font-size: 220%;
+  font-size: 220%;
 }
 
 .h3 {
-    font-size: 150%;
-    line-height: 1.5;
+  font-size: 150%;
+  line-height: 1.5;
 }
 
 .h4 {
-    font-size: 120%;
-    line-height: 1.5;
+  font-size: 120%;
+  line-height: 1.5;
 }
 
 .h5 {
-    font-size: 100%;
-    line-height: 1.5;
+  font-size: 100%;
+  line-height: 1.5;
 }
 
 // titles
@@ -45,7 +45,7 @@
   margin-bottom: 30px;
 
   @include sm-block() {
-      font-size: rem(50px);
+    font-size: rem(50px);
   }
 }
 

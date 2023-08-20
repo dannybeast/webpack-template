@@ -1,183 +1,183 @@
 .header {
-    background: rgba(#221837, 0.9);
+  background: rgba(#221837, 0.9);
+  position: relative;
+
+  .nav-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: transparent;
+    display: none;
+    width: 90px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include lg-block() {
+      display: flex;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 100%;
+    max-width: 148px;
+    img {
+      width: 100%;
+    }
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
+    height: 100px;
+  }
 
-    .nav-button {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        background: transparent;
-        display: none;
-        width: 90px;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        @include lg-block() {
-            display: flex;
-        }
+  &__right {
+    display: flex;
+    align-items: center;
+    @include lg-block() {
+      display: none;
+    }
+    .btn {
+      opacity: 0.8;
+      padding-left: 15px;
+      padding-right: 15px;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    & > * {
+      margin: 0 0 0 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .follow {
+    margin-right: auto;
+    margin-left: auto;
+    @include lg-block() {
+      display: none;
+    }
+    li {
+      margin-left: 15px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  &__nav {
+    margin-right: auto;
+    margin-left: auto;
+
+    @include lg-block() {
+      display: none;
     }
 
-    &__logo {
-        display: block;
-        width: 100%;
-        max-width: 148px;
-        img {
-            width: 100%;
-        }
-    }
-    &__row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    & > ul {
+      display: flex;
+      align-items: center;
+      & > li {
+        margin: 0 30px;
         position: relative;
-        height: 100px;
-    }
-
-    &__right {
-        display: flex;
-        align-items: center;
-        @include lg-block() {
-            display: none;
+        @include to(1370px) {
+          margin: 0 15px;
         }
-        .btn {
-            opacity: 0.8;
-            padding-left: 15px;
-            padding-right: 15px;
-            &:hover {
-                opacity: 1;
+        &.is-active {
+          a {
+            color: #949494;
+            border-color: $primary-color;
+          }
+        }
+        &.has-podmenu {
+          cursor: pointer;
+          // &:hover {
+          //     a {
+          //         opacity: 1;
+          //     }
+          // }
+          & > a {
+            pointer-events: none;
+            &:after {
+              transform: rotate(45deg);
+              transition: all 0.2s ease;
+              transform-origin: center;
+              border-color: #7970ab;
+              border-style: solid;
+              border-width: 0 1px 1px 0;
+              content: '';
+              display: inline-block;
+              height: 0;
+              left: 6px;
+              padding: 3px;
+              position: relative;
+              vertical-align: 0.255em;
+              width: 0;
             }
-        }
-        & > * {
-            margin: 0 0 0 20px;
-            &:first-child {
-                margin-left: 0;
+          }
+          &.is-open {
+            & > a {
+              &:after {
+                transform: rotate(226deg) translateY(-4px) translateX(-2px);
+              }
             }
+          }
         }
-    }
-
-    .follow {
-        margin-right: auto;
-        margin-left: auto;
-        @include lg-block() {
-            display: none;
-        }
-        li {
-            margin-left: 15px;
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-        svg {
-            width: 17px;
-            height: 17px;
-        }
-    }
-
-    &__nav {
-        margin-right: auto;
-        margin-left: auto;
-
-        @include lg-block() {
-            display: none;
-        }
-
         & > ul {
-            display: flex;
-            align-items: center;
-            & > li {
-                margin: 0 30px;
-                position: relative;
-                @include to(1370px) {
-                    margin: 0 15px;
-                }
-                &.is-active {
-                    a {
-                        color: #949494;
-                        border-color: $primary-color;
-                    }
-                }
-                &.has-podmenu {
-                    cursor: pointer;
-                    // &:hover {
-                    //     a {
-                    //         opacity: 1;
-                    //     }
-                    // }
-                    & > a {
-                        pointer-events: none;
-                        &:after {
-                            transform: rotate(45deg);
-                            transition: all 0.2s ease;
-                            transform-origin: center;
-                            border-color: #7970ab;
-                            border-style: solid;
-                            border-width: 0 1px 1px 0;
-                            content: "";
-                            display: inline-block;
-                            height: 0;
-                            left: 6px;
-                            padding: 3px;
-                            position: relative;
-                            vertical-align: 0.255em;
-                            width: 0;
-                        }
-                    }
-                    &.is-open {
-                        & > a {
-                            &:after {
-                                transform: rotate(226deg) translateY(-4px) translateX(-2px);
-                            }
-                        }
-                    }
-                }
-                & > ul {
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    min-width: 300px;
-                    background: rgba(#fff, 0.9);
-                    padding: 15px 30px;
-                    border-radius: 15px;
-                    box-shadow: 0 4px 15px 0 #0000002e;
-                    margin-top: 15px;
-                    display: none;
-                    &:before {
-                        content: "";
-                        transform: translateX(-50%);
-                        transition: all 10ms ease;
-                        border-bottom: 7px solid rgba(#fff, 0.9);
-                        border-left: 7px solid #0000;
-                        border-right: 7px solid #0000;
-                        display: block;
-                        height: 0;
-                        left: 50%;
-                        opacity: 1;
-                        position: absolute;
-                        top: -7px;
-                        width: 0;
-                    }
-                    & > li {
-                        & > a {
-                            color: #221837;
-                        }
-                    }
-                }
-            }
-        }
-
-        a {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 300px;
+          background: rgba(#fff, 0.9);
+          padding: 15px 30px;
+          border-radius: 15px;
+          box-shadow: 0 4px 15px 0 #0000002e;
+          margin-top: 15px;
+          display: none;
+          &:before {
+            content: '';
+            transform: translateX(-50%);
+            transition: all 10ms ease;
+            border-bottom: 7px solid rgba(#fff, 0.9);
+            border-left: 7px solid #0000;
+            border-right: 7px solid #0000;
             display: block;
-            color: #fff;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 300;
-            padding: 8px 0;
-            border-bottom: 2px solid transparent;
-            &:hover {
-                color: #c2bfe2;
+            height: 0;
+            left: 50%;
+            opacity: 1;
+            position: absolute;
+            top: -7px;
+            width: 0;
+          }
+          & > li {
+            & > a {
+              color: #221837;
             }
+          }
         }
+      }
     }
+
+    a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 300;
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        color: #c2bfe2;
+      }
+    }
+  }
 }

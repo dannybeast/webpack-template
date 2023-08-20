@@ -1,225 +1,89 @@
 // Field
-$textarea-height: $field-height * 2;
-$field-font-size: 14px;
-$field-border-radius: 8px;
-
 @mixin inputBase() {
-    border: solid 1px #b5b3bd;
-    height: $field-height;
-    width: 100%;
-    font-size: $field-font-size;
-    border-radius: $field-border-radius;
-    background: #fff;
-    padding-left: 15px;
+  border: solid 1px #b5b3bd;
+  height: $field-height;
+  width: 100%;
+  font-size: $field-font-size;
+  border-radius: $field-radius;
+  background: #fff;
+  padding-left: 15px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  color: #413b57;
+  transition: opacity 0.2s ease;
+  font-family: $main-font;
+  &::placeholder {
+    color: rgba(#8a8895, 1);
     font-weight: 500;
-    text-overflow: ellipsis;
-    color: #413b57;
-    transition: opacity 0.2s ease;
-    font-family: $main-font;
-    &::placeholder {
-        color: rgba(#8a8895, 1);
-        font-weight: 500;
-    }
-    &:hover,
-    &:focus {
-        border-color: darken(#b5b3bd, 15%);
-    }
+  }
+  &:hover,
+  &:focus {
+    border-color: darken(#b5b3bd, 15%);
+  }
 }
 @keyframes errorInput {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    50% {
-        transform: translateX(-6px);
-    }
+  50% {
+    transform: translateX(-6px);
+  }
 
-    100% {
-        transform: translateX(6px);
-    }
+  100% {
+    transform: translateX(6px);
+  }
 }
 .field {
-    $parent: &;
-    & > label:not(.select) {
-        display: flex;
-        align-items: flex-end;
-        font-size: 17px;
-        line-height: 1.15;
-        margin-bottom: rem(10px);
-        font-size: 16px;
-        color: #413b57;
-        font-weight: 700;
-        height: 18px;
-        sup {
-            display: inline-block;
-            vertical-align: top;
-            font-size: 0.9em;
-        }
+  $parent: &;
+  & > label:not(.select) {
+    display: flex;
+    align-items: flex-end;
+    font-size: 17px;
+    line-height: 1.15;
+    margin-bottom: rem(10px);
+    font-size: 16px;
+    color: #413b57;
+    font-weight: 700;
+    height: 18px;
+    sup {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0.9em;
     }
+  }
 
+  input,
+  textarea {
+    @include inputBase();
+  }
+
+  & > textarea {
+    min-height: $textarea-height;
+    padding-top: 10px;
+    overflow: hidden;
+  }
+  &--error {
+    label {
+      color: $danger-color;
+    }
     input,
     textarea {
-        @include inputBase();
+      border-color: $danger-color !important;
+      will-change: transform;
+      animation: errorInput 0.2s cubic-bezier(0.6, 0.2, 0.1, 1);
     }
-
-    & > textarea {
-        min-height: $textarea-height;
-        padding-top: 10px;
-        overflow: hidden;
-    }
-    &__error-message {
-        margin-top: 5px;
-        color: red;
-    }
-    &__group {
-        position: relative;
-        margin-bottom: 5px;
-        input {
-            padding-right: 60px;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-    &__cross {
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        margin-left: 30px;
-        transform: translateY(-50%) scale(0);
-        cursor: pointer;
-        opacity: 0;
-        transition: all 0.2s ease;
-
-        svg {
-            width: 17px;
-            height: 17px;
-            fill: #e14236;
-        }
-    }
-    &.is-has-value {
-        .field__cross {
-            opacity: 1;
-            transform: translateY(-50%) scale(1);
-        }
-    }
-    &__icon {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &.is-pointer {
-            cursor: pointer;
-            &:hover {
-                svg {
-                    fill: $primary-color;
-                }
-            }
-        }
-        img {
-            width: 26px;
-        }
-        svg {
-            width: 23px;
-            height: 23px;
-        }
-    }
-
-    &__choose-group {
-        position: relative;
-        input {
-            padding-right: 60px;
-        }
-    }
-    &__choose-button {
-        cursor: pointer;
-        width: 60px;
-        height: 50px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: -1px;
-        border-left: solid 1px #b5b3bd;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top-right-radius: $field-border-radius;
-        border-bottom-right-radius: $field-border-radius;
-        svg {
-            fill: $primary-color;
-            width: 30px;
-        }
-        &:hover {
-            svg {
-                fill: #fff;
-            }
-        }
-    }
-
-    &--error {
-        label {
-            color: $danger-color;
-        }
-        input,
-        textarea {
-            border-color: $danger-color !important;
-            will-change: transform;
-            animation: errorInput 0.2s cubic-bezier(0.6, 0.2, 0.1, 1);
-        }
-    }
+  }
 }
-
-.select {
-    position: relative;
-    display: block;
-    cursor: pointer;
-    &:after {
-        content: "";
-        width: 6px;
-        height: 10px;
-        background: svg-load("../icons/arrow-strong.svg", fill=#e14135, stroke=#e14135);
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%) rotate(90deg);
-
-        pointer-events: none;
-    }
-    select {
-        @include inputBase();
-        text-overflow: ellipsis;
-        font-weight: 700;
-        padding-right: 35px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        text-indent: 1px;
-        outline: none;
-        &:-ms-expand {
-            display: none;
-        }
-        option {
-            font-size: 16px;
-            font-weight: 400;
-        }
-    }
-}
-//-
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Firefox */
-input[type="number"] {
-    -moz-appearance: textfield;
+input[type='number'] {
+  -moz-appearance: textfield;
 }

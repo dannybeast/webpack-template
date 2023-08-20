@@ -1,8 +1,9 @@
-const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
-const TerserPlugin = require('terser-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.conf');
+const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const buildWebpackConfig = merge(baseWebpackConfig, {
   // BUILD config
   mode: 'production',
@@ -15,7 +16,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
           mangle: true,
           output: {
             comments: false,
-          }
+          },
         },
       }),
       new CompressionPlugin({
@@ -23,18 +24,17 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
         algorithm: 'gzip',
         test: /\.js$|\.css$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
         threshold: 10240,
-        minRatio: 0.8
-      })
-
-    ]
+        minRatio: 0.8,
+      }),
+    ],
   },
   plugins: [
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static'
-    })
-  ]
-})
+      analyzerMode: 'static',
+    }),
+  ],
+});
 
 module.exports = new Promise((resolve, reject) => {
-  resolve(buildWebpackConfig)
-})
+  resolve(buildWebpackConfig);
+});

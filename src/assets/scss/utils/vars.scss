@@ -1,11 +1,10 @@
 // Fonts
-$main-font: "Rubik", sans-serif;
-$accent-font: "Manrope", sans-serif;
+$main-font: 'Rubik', sans-serif;
+$accent-font: 'Manrope', sans-serif;
 $main-font-color: #000;
 $main-font-size: 16px;
 $main-font-weight: 400;
 $main-line-height: 1.25;
-
 
 // Main color
 $accent-color: #ffee87;
@@ -21,12 +20,13 @@ $border-base: #dbdddc;
 $anim: cubic-bezier(0.58, 0.3, 0.005, 1);
 $animSpeed: 0.4s;
 
-
 // fields
 $field-margin: 25px;
 $field-border-width: 2px;
 $field-border-color: $border-base;
 $field-color-danger: $danger-color;
+$field-font-size: 14px;
 $field-radius: 0;
 $field-height: 50px;
+$textarea-height: $field-height * 2;
 $field-bg: transparent;

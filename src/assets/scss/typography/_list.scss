@@ -16,7 +16,7 @@
       width: 17px;
       height: 2px;
       display: block;
-      background: #000;
+      background: $black-color;
       position: absolute;
       top: 0.75em;
       left: 0;
@@ -31,7 +31,7 @@
   }
   &_light {
     li {
-      color: rgba(#000, 0.6);
+      color: rgba($black-color, 0.6);
       &:before {
         background: #e6ded3 !important;
       }
@@ -56,7 +56,7 @@
 
     &:before {
       counter-increment: myCounter;
-      color: #000;
+      color: $black-color;
       position: absolute;
       top: 0;
       left: 0;

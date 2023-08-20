@@ -1,6 +1,6 @@
 .btn {
   padding: 0 30px;
-  color: #000;
+  color: $black-color;
   background-color: #cfceda;
   font-size: 14px;
   font-family: $main-font;
@@ -34,10 +34,10 @@
 
   // Colors
   &--black {
-    background: #000;
-    color: #fff;
+    background: $black-color;
+    color: $white-color;
     &:hover {
-      color: #000;
+      color: $black-color;
       background: $primary-color;
     }
   }

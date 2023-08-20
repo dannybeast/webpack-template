@@ -1,24 +1,24 @@
 // Field
 @mixin inputBase() {
-  border: solid 1px #b5b3bd;
+  border: solid $field-border-width $field-border-color;
   height: $field-height;
   width: 100%;
   font-size: $field-font-size;
   border-radius: $field-radius;
-  background: #fff;
+  background: $field-background-color;
   padding-left: 15px;
   font-weight: 500;
   text-overflow: ellipsis;
-  color: #413b57;
-  transition: opacity 0.2s ease;
+  color: $field-color;
+  transition: border-color 0.2s ease;
   font-family: $main-font;
   &::placeholder {
-    color: rgba(#8a8895, 1);
+    color: rgba($accent-color, 0.5);
     font-weight: 500;
   }
   &:hover,
   &:focus {
-    border-color: darken(#b5b3bd, 15%);
+    border-color: darken($field-border-color, 15%);
   }
 }
 @keyframes errorInput {
@@ -35,25 +35,8 @@
   }
 }
 .field {
-  $parent: &;
-  & > label:not(.select) {
-    display: flex;
-    align-items: flex-end;
-    font-size: 17px;
-    line-height: 1.15;
-    margin-bottom: rem(10px);
-    font-size: 16px;
-    color: #413b57;
-    font-weight: 700;
-    height: 18px;
-    sup {
-      display: inline-block;
-      vertical-align: top;
-      font-size: 0.9em;
-    }
-  }
-
   input,
+  select,
   textarea {
     @include inputBase();
   }
@@ -68,12 +51,19 @@
       color: $danger-color;
     }
     input,
+    select,
     textarea {
       border-color: $danger-color !important;
       will-change: transform;
       animation: errorInput 0.2s cubic-bezier(0.6, 0.2, 0.1, 1);
     }
   }
+}
+
+.field-label {
+  line-height: 1.15;
+  margin-bottom: rem(10px);
+  font-weight: 700;
 }
 
 /* Chrome, Safari, Edge, Opera */

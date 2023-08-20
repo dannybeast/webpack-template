@@ -7,13 +7,14 @@ $main-font-weight: 400;
 $main-line-height: 1.25;
 
 // Main color
-$accent-color: #ffee87;
-$gray-color: #efefef;
-$default-color: #ffffff;
+$accent-color: #413b57;
 $primary-color: #e14135;
+$gray-color: #efefef;
 $success-color: #1ec16f;
 $danger-color: #eb001b;
 $warning-color: #ff5100;
+$black-color: #000;
+$white-color: #fff;
 $border-base: #dbdddc;
 
 // Animations
@@ -21,10 +22,10 @@ $anim: cubic-bezier(0.58, 0.3, 0.005, 1);
 $animSpeed: 0.4s;
 
 // fields
-$field-margin: 25px;
-$field-border-width: 2px;
+$field-border-width: 1px;
 $field-border-color: $border-base;
-$field-color-danger: $danger-color;
+$field-background-color: #fff;
+$field-color: #000;
 $field-font-size: 14px;
 $field-radius: 0;
 $field-height: 50px;

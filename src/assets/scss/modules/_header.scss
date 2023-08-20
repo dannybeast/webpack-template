@@ -137,19 +137,19 @@
           left: 50%;
           transform: translateX(-50%);
           min-width: 300px;
-          background: rgba(#fff, 0.9);
+          background: rgba($white-color, 0.9);
           padding: 15px 30px;
           border-radius: 15px;
-          box-shadow: 0 4px 15px 0 #0000002e;
+          box-shadow: 0 4px 15px 0 $black-color;
           margin-top: 15px;
           display: none;
           &:before {
             content: '';
             transform: translateX(-50%);
             transition: all 10ms ease;
-            border-bottom: 7px solid rgba(#fff, 0.9);
-            border-left: 7px solid #0000;
-            border-right: 7px solid #0000;
+            border-bottom: 7px solid rgba($white-color, 0.9);
+            border-left: 7px solid $black-color;
+            border-right: 7px solid $black-color;
             display: block;
             height: 0;
             left: 50%;
@@ -169,7 +169,7 @@
 
     a {
       display: block;
-      color: #fff;
+      color: $white-color;
       text-decoration: none;
       font-size: 17px;
       font-weight: 300;

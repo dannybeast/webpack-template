@@ -1,112 +1,112 @@
 .footer {
-    background: #413b57;
-    padding-bottom: 60px;
-    color: rgba(#fff, 0.5);
-    .typography {
-        font-size: 12px;
-        font-weight: 300;
-    }
-    &__top {
-        @include row-flex();
-        padding-top: rem(120px);
-        padding-bottom: rem(70px);
-        &-col {
-            @include col();
-            @include size(2.4);
-            @include size-md(6);
-            @include md-block() {
-                margin-bottom: 60px;
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-            & > ul {
-                li {
-                    margin-bottom: 20px;
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                }
-                a {
-                    font-family: $accent-font;
-                    color: #fff;
-                    font-size: 16px;
-                    text-decoration: none;
-                    opacity: 0.5;
-                    font-weight: 300;
-                    &:hover {
-                        opacity: 1;
-                    }
-                }
-            }
+  background: #413b57;
+  padding-bottom: 60px;
+  color: rgba($white-color, 0.5);
+  .typography {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  &__top {
+    @include row-flex();
+    padding-top: rem(120px);
+    padding-bottom: rem(70px);
+    &-col {
+      @include col();
+      @include size(2.4);
+      @include size-md(6);
+      @include md-block() {
+        margin-bottom: 60px;
+        &:last-child {
+          margin-bottom: 0;
         }
-    }
-    &__logo {
-        opacity: 0.2;
-        width: 100%;
-        max-width: 178px;
-        img {
-            width: 100%;
-        }
-        transition: all 0.2s ease;
-        &:hover {
-            opacity: 1;
-        }
-    }
-    &__copyright {
-        font-size: 12px;
-        line-height: 1.9;
-        color: #fff;
-        font-weight: 300;
-        margin: 0 auto 0 60px;
-        @include md-block() {
-            width: 100%;
-            margin: 30px 0;
-        }
-    }
-    &__bottom-links {
-        display: flex;
-        align-items: center;
+      }
+      & > ul {
         li {
-            margin: 0 0 0 60px;
-            @include md-block() {
-                margin: 0 60px 0 0;
-            }
+          margin-bottom: 20px;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
         a {
-            color: #fff;
-            font-size: 14px;
-            font-weight: 300;
-            opacity: 0.5;
-            transition: all 0.2s ease;
+          font-family: $accent-font;
+          color: $white-color;
+          font-size: 16px;
+          text-decoration: none;
+          opacity: 0.5;
+          font-weight: 300;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  &__logo {
+    opacity: 0.2;
+    width: 100%;
+    max-width: 178px;
+    img {
+      width: 100%;
+    }
+    transition: all 0.2s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__copyright {
+    font-size: 12px;
+    line-height: 1.9;
+    color: $white-color;
+    font-weight: 300;
+    margin: 0 auto 0 60px;
+    @include md-block() {
+      width: 100%;
+      margin: 30px 0;
+    }
+  }
+  &__bottom-links {
+    display: flex;
+    align-items: center;
+    li {
+      margin: 0 0 0 60px;
+      @include md-block() {
+        margin: 0 60px 0 0;
+      }
+    }
+    a {
+      color: $white-color;
+      font-size: 14px;
+      font-weight: 300;
+      opacity: 0.5;
+      transition: all 0.2s ease;
 
-            &:hover {
-                opacity: 1;
-            }
-        }
+      &:hover {
+        opacity: 1;
+      }
     }
-    &__bottom {
-        &-top {
-            display: flex;
-            align-items: center;
-            border-top: 2px solid #504a66;
-            justify-content: space-between;
-            padding-top: 60px;
-            padding-bottom: 60px;
-            position: relative;
-            @include md-block() {
-                flex-wrap: wrap;
-            }
-            &:before {
-                content: "";
-                width: 190px;
-                height: 2px;
-                background: $primary-color;
-                display: block;
-                position: absolute;
-                top: -2px;
-                left: 0;
-            }
-        }
+  }
+  &__bottom {
+    &-top {
+      display: flex;
+      align-items: center;
+      border-top: 2px solid #504a66;
+      justify-content: space-between;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      position: relative;
+      @include md-block() {
+        flex-wrap: wrap;
+      }
+      &:before {
+        content: '';
+        width: 190px;
+        height: 2px;
+        background: $primary-color;
+        display: block;
+        position: absolute;
+        top: -2px;
+        left: 0;
+      }
     }
+  }
 }

@@ -18,9 +18,9 @@ $radio-size: 17px;
     width: $size;
     height: $size;
     display: block;
-    background: transparent;
+    background: $field-background-color;
     position: absolute;
-    border: solid 1px $primary-color;
+    border: solid $field-border-width $field-border-color;
     left: 0;
     top: 1px;
   }
@@ -36,7 +36,7 @@ $radio-size: 17px;
     display: block;
     position: absolute;
     left: 0;
-    top: 1px;
+    top: $field-border-width;
     opacity: 0;
   }
 }
@@ -49,24 +49,15 @@ $radio-size: 17px;
   text-transform: none;
   align-items: center;
   position: relative;
-  padding-left: $radio-size + 15px;
+  padding-left: $radio-size + 10px;
   cursor: pointer;
   font-size: $radio-font-size;
   user-select: none;
   min-height: $radio-size;
   line-height: 1.3;
   text-align: left;
-  color: #000;
+  color: $black-color;
   margin: 0 !important;
-
-  a {
-    text-decoration: underline;
-    margin-left: 5px;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
 
   input {
     display: none;
@@ -82,28 +73,7 @@ $radio-size: 17px;
 }
 
 .radio {
-  &__subtext {
-    font-size: 14px;
-    color: rgba(#000, 0.5);
-  }
-  &__row {
-    @include row-flex();
-  }
-  &__col {
-    @include col();
-    @include size(6);
-    @include size-sm(12);
-    @include sm-block() {
-      margin-bottom: 5px;
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
   span {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
     img {
       flex-shrink: 0;
     }
@@ -114,10 +84,6 @@ $radio-size: 17px;
     &:after {
       background: $primary-color;
       border-radius: 50%;
-      width: $radio-size - 8px;
-      height: $radio-size - 8px;
-      top: 9px;
-      left: 4px;
     }
   }
 }

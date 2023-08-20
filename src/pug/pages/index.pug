@@ -6,12 +6,40 @@ block variables
     - var pageName = 'index';
 
 block content
-  +b.SECTION.intro 
+  +b.SECTION 
     .container 
       +b.typography 
-        +icon('cross')
+        
         h1 Hello World 
         p Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quod eaque nemo officiis, dicta sed cumque cum, earum maxime enim consequatur? Incidunt nobis blanditiis dolor eligendi ipsum, ab ipsa nisi?
+        ul
+         li Item
+         li Item
+         li Item
+        ol
+         li Item
+         li Item
+         li Item
+        
+        +b.field 
+         label.field-label Label 
+         input(type="text" value="text")
+
+        +b.LABEL.checkbox
+         input(type="checkbox" name="agreement")
+         span Text
+        
+        br
+
+        +b.LABEL.radio
+         input(type="radio" name="radio")
+         span Text
+        +b.LABEL.radio
+         input(type="radio" name="radio")
+         span Text
+        +b.LABEL.radio
+         input(type="radio" name="radio")
+         span Text
 
 block script
   script(src="assets/js/app.js")
